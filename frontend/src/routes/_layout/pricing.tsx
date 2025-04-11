@@ -15,8 +15,8 @@ function PricingPage() {
     {
       name: "Starter",
       description: "Perfect for hobbyists and small projects looking to tap into data effortlessly.",
-      monthlyPrice: 49,
-      annualPrice: 39,
+      monthlyPrice: 59,
+      annualPrice: 49,
       monthlyHref: "https://buy.stripe.com/5kAaGP0lMdJ17Xa000",
       annualHref: "https://buy.stripe.com/8wMg194C2eN51yMeUZ",
       features: [
@@ -36,8 +36,8 @@ function PricingPage() {
     {
       name: "Analyst",
       description: "Ideal for data analysts and teams scaling their insights with confidence",
-      monthlyPrice: 149,
-      annualPrice: 119,
+      monthlyPrice: 159,
+      annualPrice: 129,
       monthlyHref: "https://buy.stripe.com/00gdT1c4u8oHdhu145",
       annualHref: "https://buy.stripe.com/6oE2ajc4ubATelycMQ",
       popular: true,
@@ -58,8 +58,8 @@ function PricingPage() {
     {
       name: "Business",
       description: "Designed for data enthusiasts and companies tackling large-scale data challenges.",
-      monthlyPrice: 475,
-      annualPrice: 380,
+      monthlyPrice: 485,
+      annualPrice: 390,
       monthlyHref: "https://buy.stripe.com/eVa3en8Si7kDdhu9AC",
       annualHref: "https://buy.stripe.com/bIY16f0lM0Wf4KY28b",
       features: [
