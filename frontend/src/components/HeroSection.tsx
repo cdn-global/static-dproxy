@@ -1,10 +1,7 @@
 import { Box, Flex, Heading, Text, Button, VStack } from "@chakra-ui/react";
 import PropTypes from 'prop-types';
 
-function HeroSection({ title, subtitle, ctas, bgImage }) {
-  // Ensure ctas is an array
-  const ctaButtons = Array.isArray(ctas) ? ctas : [];
-
+function HeroSection({ title, subtitle, ctas = [], bgImage = '' }) {
   return (
     <Box
       bgGradient="linear(to-bl, orange.900, orange.400)"
@@ -38,7 +35,7 @@ function HeroSection({ title, subtitle, ctas, bgImage }) {
       >
         <VStack
           align="flex-start"
-          spacing={6}
+          spacing={{ base: 4, md: 6 }} // Reduced spacing on mobile
           w={{ base: "100%", md: "50%" }}
           px={{ base: 0, md: 8 }}
         >
@@ -56,9 +53,36 @@ function HeroSection({ title, subtitle, ctas, bgImage }) {
             color="white"
             fontWeight="normal"
             maxW="600px"
+            mb={6}
           >
             {subtitle}
           </Text>
+          {/* CTA buttons on mobile */}
+          <Flex
+            display={{ base: "flex", md: "none" }} // Show only on mobile
+            justify="flex-start"
+            gap={4}
+            flexWrap="wrap"
+            w="100%"
+          >
+            {ctas.map((cta, index) => (
+              <Button
+                key={cta.link}
+                as="a"
+                href={cta.link}
+                color={index === 0 ? "white" : "orange.400"}
+                bg={index === 0 ? "orange.400" : "white"}
+                size="lg"
+                _hover={{
+                  bg: index === 0 ? "white" : "orange.400",
+                  color: index === 0 ? "orange.400" : "white",
+                }}
+                px={6}
+              >
+                {cta.text}
+              </Button>
+            ))}
+          </Flex>
         </VStack>
 
         <Box
@@ -66,37 +90,39 @@ function HeroSection({ title, subtitle, ctas, bgImage }) {
           display="flex"
           justifyContent={{ base: "center", md: "flex-end" }}
           alignItems="center"
-          minH={{ base: "300px", md: "400px" }}
+          minH={{ base: "100px", md: "400px" }} // Reduced height on mobile
         >
           {/* Image removed, but space preserved */}
         </Box>
       </Flex>
 
+      {/* CTA buttons on desktop */}
       <Flex
+        display={{ base: "none", md: "flex" }} // Show only on desktop
         justify="center"
         gap={4}
         pt={{ base: 6, md: 8 }}
         pb={{ base: 10, md: 20 }}
         position="relative"
         zIndex={2}
-        flexWrap="wrap" // Allow buttons to wrap on smaller screens
+        flexWrap="wrap"
       >
-        {ctaButtons.map((cta, index) => (
+        {ctas.map((cta, index) => (
           <Button
-          key={index}
-          as="a"
-          href={cta.link}
-          color={index === 0 ? "white" : "orange.400"} 
-          bg={index === 0 ? "orange.400" : "white"}
-          size="lg"
-          _hover={{ 
-            bg: index === 0 ? "white" : "orange.400", 
-            color: index === 0 ? "orange.400" : "white" 
-          }}
-          px={6}
-        >
-          {cta.text}
-        </Button>
+            key={cta.link}
+            as="a"
+            href={cta.link}
+            color={index === 0 ? "white" : "orange.600"}
+            bg={index === 0 ? "orange.600" : "white"}
+            size="lg"
+            _hover={{
+              bg: index === 0 ? "white" : "orange.600",
+              color: index === 0 ? "orange.600" : "white",
+            }}
+            px={6}
+          >
+            {cta.text}
+          </Button>
         ))}
       </Flex>
     </Box>
@@ -113,11 +139,6 @@ HeroSection.propTypes = {
     })
   ),
   bgImage: PropTypes.string,
-};
-
-HeroSection.defaultProps = {
-  ctas: [],
-  bgImage: '',
 };
 
 export default HeroSection;
