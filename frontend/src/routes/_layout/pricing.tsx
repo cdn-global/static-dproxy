@@ -16,7 +16,9 @@ function PricingPage() {
       name: "Starter",
       description: "Perfect for hobbyists and small projects looking to tap into data effortlessly.",
       monthlyPrice: 49,
-      annualPrice: 39, // ~20% discount from $49
+      annualPrice: 39,
+      monthlyHref: "https://buy.stripe.com/5kAaGP0lMdJ17Xa000",
+      annualHref: "https://buy.stripe.com/8wMg194C2eN51yMeUZ",
       features: [
         "100,000 API calls per month",
         "20 simultaneous threads",
@@ -35,7 +37,9 @@ function PricingPage() {
       name: "Analyst",
       description: "Ideal for data analysts and teams scaling their insights with confidence",
       monthlyPrice: 149,
-      annualPrice: 119, // ~20% discount from $149
+      annualPrice: 119,
+      monthlyHref: "https://buy.stripe.com/00gdT1c4u8oHdhu145",
+      annualHref: "https://buy.stripe.com/6oE2ajc4ubATelycMQ",
       popular: true,
       features: [
         "1,000,000 API calls per month",
@@ -55,7 +59,9 @@ function PricingPage() {
       name: "Business",
       description: "Designed for data enthusiasts and companies tackling large-scale data challenges.",
       monthlyPrice: 475,
-      annualPrice: 380, // ~20% discount from $475
+      annualPrice: 380,
+      monthlyHref: "https://buy.stripe.com/eVa3en8Si7kDdhu9AC",
+      annualHref: "https://buy.stripe.com/bIY16f0lM0Wf4KY28b",
       features: [
         "5,000,000 API calls per month",
         "200 simultaneous threads",
@@ -258,17 +264,17 @@ function PricingPage() {
                       </Text>
                     </Box>
                   )}
-                  <Button
-                    colorScheme={plan.popular ? "orange" : "gray"}
-                    variant={plan.popular ? "solid" : "outline"}
-                    size="lg"
-                    width="full"
-                    mb={6}
-                    as="a"
-                    href="/contact-sales"
-                  >
-                    {plan.customPricing ? "Contact Sales" : "Select Plan"}
-                  </Button>
+<Button
+  colorScheme={plan.popular ? "orange" : "gray"}
+  variant={plan.popular ? "solid" : "outline"}
+  size="lg"
+  width="full"
+  mb={6}
+  as="a"
+  href={plan.customPricing ? "/contact-sales" : isAnnual ? plan.annualHref : plan.monthlyHref}
+>
+  {plan.customPricing ? "Contact Sales" : "Select Plan"}
+</Button>
                   <Divider mb={4} />
                   <Text fontWeight="medium" mb={3}>Features:</Text>
                   <List spacing={2} mb={6}>
