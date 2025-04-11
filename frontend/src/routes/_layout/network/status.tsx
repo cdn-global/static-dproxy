@@ -220,7 +220,7 @@ function NetworkStatusPage() {
           {/* <Box textAlign="center" mt={10}>
             <Button
               size="md"
-              colorScheme="blue"
+              colorScheme="orange"
               variant="outline"
               as="a"
               href="/network/incident-history"

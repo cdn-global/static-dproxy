@@ -111,19 +111,19 @@ function FAQPage() {
             <VStack align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
               <Heading as="h3" size="md" color="orange.600">Getting Started</Heading>
               <Text>Basic information about our platform, account creation, and essential features.</Text>
-              <Button colorScheme="blue" variant="link" rightIcon={<InfoIcon />}>Learn more</Button>
+              <Button colorScheme="orange" variant="link" rightIcon={<InfoIcon />}>Learn more</Button>
             </VStack>
             
             <VStack align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
               <Heading as="h3" size="md" color="orange.600">Billing & Accounts</Heading>
               <Text>Information about pricing, subscription management, payments, and account settings.</Text>
-              <Button colorScheme="blue" variant="link" rightIcon={<InfoIcon />}>Learn more</Button>
+              <Button colorScheme="orange" variant="link" rightIcon={<InfoIcon />}>Learn more</Button>
             </VStack>
             
             <VStack align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
               <Heading as="h3" size="md" color="orange.600">Technical Support</Heading>
               <Text>Troubleshooting guides, error resolution, and technical assistance for our platform.</Text>
-              <Button colorScheme="blue" variant="link" rightIcon={<InfoIcon />}>Learn more</Button>
+              <Button colorScheme="orange" variant="link" rightIcon={<InfoIcon />}>Learn more</Button>
             </VStack>
           </SimpleGrid> */}
 
@@ -150,7 +150,7 @@ function FAQPage() {
                 <Text fontSize="sm" color="gray.600">
                   <Text as="span" fontWeight="bold">Topics covered:</Text> {category.topics}
                 </Text>
-                {/* <Button mt={4} colorScheme="blue" variant="outline" size="sm">View Articles</Button> */}
+                {/* <Button mt={4} colorScheme="orange" variant="outline" size="sm">View Articles</Button> */}
               </Box>
             ))}
           </SimpleGrid>
@@ -208,7 +208,7 @@ function FAQPage() {
                 <Box>
                   <Flex justify="space-between" align="center" mb={2}>
                     <Heading as="h3" size="md" fontWeight="medium">{article.question}</Heading>
-                    <Tag size="sm" colorScheme="blue" ml={2}>{article.category}</Tag>
+                    <Tag size="sm" colorScheme="orange" ml={2}>{article.category}</Tag>
                   </Flex>
                   <Text color="gray.600" mb={3} noOfLines={3}>{article.answer}</Text>
                   <HStack spacing={8}>
@@ -216,7 +216,7 @@ function FAQPage() {
                       <InfoIcon color="gray.400" mr={2} />
                       <Text fontSize="sm" color="gray.500">{article.views} views</Text>
                     </Flex>
-                    <Button colorScheme="blue" size="sm" variant="outline">Read More</Button>
+                    <Button colorScheme="orange" size="sm" variant="outline">Read More</Button>
                   </HStack>
                 </Box>
               </Flex>

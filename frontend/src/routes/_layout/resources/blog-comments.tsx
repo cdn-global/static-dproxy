@@ -142,7 +142,7 @@ function BlogPage() {
                   />
                   <Box p={6}>
                     <HStack mb={4} spacing={3}>
-                      <Badge colorScheme="blue" px={3} py={1} borderRadius="full">
+                      <Badge colorScheme="orange" px={3} py={1} borderRadius="full">
                         {post.category || 'Uncategorized'}
                       </Badge>
                       <Flex align="center">
@@ -218,7 +218,7 @@ function BlogPage() {
                   />
                   <Box p={5}>
                     <HStack mb={3} spacing={3}>
-                      <Badge colorScheme="blue" px={2} py={0.5} borderRadius="full">
+                      <Badge colorScheme="orange" px={2} py={0.5} borderRadius="full">
                         {post.category || 'Uncategorized'}
                       </Badge>
                       <Flex align="center">
@@ -341,7 +341,7 @@ function BlogPage() {
                       />
                       <Box flex="1">
                         <HStack mb={1}>
-                          <Badge colorScheme="blue" size="sm">{post.category || 'Uncategorized'}</Badge>
+                          <Badge colorScheme="orange" size="sm">{post.category || 'Uncategorized'}</Badge>
                           <Text fontSize="xs" color="gray.500">{post.date || 'No date'}</Text>
                           <Flex align="center">
                             <TimeIcon mr={1} color="gray.500" boxSize={3} m={2}/>
@@ -398,7 +398,7 @@ function BlogPage() {
                     {popularTags.map((tag, index) => (
                       <Tag
                         key={index}
-                        colorScheme={selectedTags.includes(tag) ? "blue" : "blue"}
+                        colorScheme={selectedTags.includes(tag) ? "orange" : "orange"}
                         variant={selectedTags.includes(tag) ? "solid" : "subtle"}
                         size="md"
                         borderRadius="full"
@@ -419,7 +419,7 @@ function BlogPage() {
                   <Text mb={4}>
                     Our team can help you implement the strategies and techniques discussed in our articles.
                   </Text>
-                  <Button colorScheme="blue" width="full" as="a" href="/contact-sales">
+                  <Button colorScheme="orange" width="full" as="a" href="/contact-sales">
                     Contact Us
                   </Button>
                 </Box>

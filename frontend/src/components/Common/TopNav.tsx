@@ -409,7 +409,7 @@ const TopNav = () => {
                 <Button
                   as={RouterLink}
                   to="https://buy.stripe.com/5kAaGP0lMdJ17Xa000"
-                  colorScheme="blue"
+                  colorScheme="orange"
                   variant="solid"
                   size="sm"
                   onClick={onClose}
@@ -420,7 +420,7 @@ const TopNav = () => {
                   as={RouterLink}
                   to="https://cloud.thedataproxy.com/login"
                   variant="outline"
-                  colorScheme="blue"
+                  colorScheme="orange"
                   size="sm"
                   onClick={onClose}
                 >

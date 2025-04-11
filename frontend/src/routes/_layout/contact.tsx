@@ -111,7 +111,7 @@ function ContactPage() {
                 Speak with our sales team about products, pricing, and custom solutions for your business.
               </Text>
               <Button 
-                colorScheme="blue" 
+                colorScheme="orange" 
                 size="lg"
                 width="full"
                 onClick={handleContactSales}
@@ -141,7 +141,7 @@ function ContactPage() {
               <Button 
                 as="a"
                 href="tel:+18554402242"
-                colorScheme="blue" 
+                colorScheme="orange" 
                 size="lg"
                 width="full"
               >
@@ -186,7 +186,7 @@ function ContactPage() {
                   <Button 
                     as="a"
                     href="/contact-sales"
-                    colorScheme="blue" 
+                    colorScheme="orange" 
                     variant="link" 
                     rightIcon={<EmailIcon />}
                   >
@@ -195,7 +195,7 @@ function ContactPage() {
                   <Button 
                     as="a"
                     href="tel:+18554402242"
-                    colorScheme="blue" 
+                    colorScheme="orange" 
                     variant="link" 
                     rightIcon={<PhoneIcon />}
                   >
