@@ -352,7 +352,7 @@ const TopNav = () => {
                 </Box>
               ) : (
                 <Flex gap={2}>
-                  <Button as={RouterLink} to="https://cloud.thedataproxy.com/signup" colorScheme="orange" variant="solid" size="sm">
+                  <Button as={RouterLink} to="https://buy.stripe.com/5kAaGP0lMdJ17Xa000" colorScheme="orange" variant="solid" size="sm">
                     Start Free Trial
                   </Button>
                   <Button as={RouterLink} to="https://cloud.thedataproxy.com/login" variant="outline" colorScheme="orange" size="sm">
@@ -408,7 +408,7 @@ const TopNav = () => {
               <Flex flexDir="column" gap={2} px={4} py={2}>
                 <Button
                   as={RouterLink}
-                  to="https://cloud.thedataproxy.com/signup"
+                  to="https://buy.stripe.com/5kAaGP0lMdJ17Xa000"
                   colorScheme="blue"
                   variant="solid"
                   size="sm"

@@ -363,7 +363,7 @@ function RotatingProxyService() {
               color="white"
               _hover={{ bg: "teal.600" }}
               as="a"
-              href="https://cloud.thedataproxy.com/signup"
+              href="https://buy.stripe.com/5kAaGP0lMdJ17Xa000"
               >
                Start Free Trial
             </Button>

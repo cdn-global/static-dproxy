@@ -174,7 +174,7 @@ function BlogPage() {
           <Text fontSize="lg" mb={10} maxW="700px" mx="auto" color="white">Download our free comprehensive guides...</Text>
           <Flex justify="center" gap={6} flexWrap="wrap">
             <Button size="lg" bg="white" color="orange.500" _hover={{ bg: "gray.100" }} as="a" href="/demo-request">Request Demo</Button>
-            <Button size="lg" variant="outline" borderColor="white" color="white" _hover={{ bg: "orange.700" }} as="a" href="https://cloud.thedataproxy.com/signup">Start Free Trial</Button>
+            <Button size="lg" variant="outline" borderColor="white" color="white" _hover={{ bg: "orange.700" }} as="a" href="https://buy.stripe.com/5kAaGP0lMdJ17Xa000">Start Free Trial</Button>
           </Flex>
         </Box>
       </Box>
