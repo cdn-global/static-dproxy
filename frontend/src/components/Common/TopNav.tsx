@@ -120,7 +120,7 @@ const NavItems = ({ onClose, isMobile = false }: NavItemsProps) => {
   const queryClient = useQueryClient();
   const textColor = "gray.800";
   const hoverColor = "blue.600";
-  const bgActive = "blue.100";
+  const bgActive = "blue.500";
   const activeTextColor = "blue.800";
   const currentUser = queryClient.getQueryData<UserPublic>(["currentUser"]);
   const [activeMenuIndex, setActiveMenuIndex] = useState<number | null>(null);
