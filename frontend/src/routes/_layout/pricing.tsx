@@ -415,8 +415,8 @@ function PricingPage() {
               <Text fontSize="sm" color="gray.600">Across our network</Text>
             </VStack>
             <VStack>
-              <Heading as="h3" size="2xl" color="orange.600">15K+</Heading>
-              <Text fontWeight="medium">Active Users</Text>
+              <Heading as="h3" size="2xl" color="orange.600">50K+</Heading>
+              <Text fontWeight="medium">IP Pool</Text>
               <Text fontSize="sm" color="gray.600">From solo to scale</Text>
             </VStack>
             <VStack>
