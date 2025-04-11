@@ -51,7 +51,7 @@ function BlogPage() {
     return matchesCategory && matchesTags;
   });
 
-  if (loading) return <Flex justify="center" align="center" minH="100vh"><Spinner size="xl" color="blue.500" /></Flex>;
+  if (loading) return <Flex justify="center" align="center" minH="100vh"><Spinner size="xl" color="orange.500" /></Flex>;
   if (error) return <Text fontSize="lg" textAlign="center" py={16} color="red.500">Error: {error}</Text>;
   if (!posts.length) return <Text fontSize="lg" textAlign="center" py={16}>No posts available</Text>;
 
@@ -73,7 +73,7 @@ function BlogPage() {
 
   return (
     <>
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={6} fontWeight="medium">Guides and Trends</Heading>
           <Text fontSize="xl" textAlign="center" mb={10} maxW="800px" mx="auto">Expert articles, tutorials, and insights...</Text>
@@ -168,13 +168,13 @@ function BlogPage() {
         </Box>
       </Box>
 
-      <Box py={16} bg="blue.600" color="white">
+      <Box py={16} bg="orange.600" color="white">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={6} fontWeight="medium" color="white">Master Web Scraping Today</Heading>
           <Text fontSize="lg" mb={10} maxW="700px" mx="auto" color="white">Download our free comprehensive guides...</Text>
           <Flex justify="center" gap={6} flexWrap="wrap">
-            <Button size="lg" bg="white" color="blue.500" _hover={{ bg: "gray.100" }} as="a" href="/demo-request">Request Demo</Button>
-            <Button size="lg" variant="outline" borderColor="white" color="white" _hover={{ bg: "blue.700" }} as="a" href="https://cloud.thedataproxy.com/signup">Start Free Trial</Button>
+            <Button size="lg" bg="white" color="orange.500" _hover={{ bg: "gray.100" }} as="a" href="/demo-request">Request Demo</Button>
+            <Button size="lg" variant="outline" borderColor="white" color="white" _hover={{ bg: "orange.700" }} as="a" href="https://cloud.thedataproxy.com/signup">Start Free Trial</Button>
           </Flex>
         </Box>
       </Box>
@@ -216,8 +216,8 @@ function BlogPage() {
                   <Divider mb={4} />
                   <VStack spacing={3} align="stretch">
                     {popularCategories.map((category, index) => (
-                      <Flex key={index} justify="space-between" align="center" cursor="pointer" onClick={() => handleCategoryClick(category.name)} _hover={{ bg: "gray.100" }} p={2} borderRadius="md" bg={selectedCategory === category.name ? "blue.100" : "transparent"}>
-                        <Text color="blue.600" fontWeight="medium">{category.name}</Text>
+                      <Flex key={index} justify="space-between" align="center" cursor="pointer" onClick={() => handleCategoryClick(category.name)} _hover={{ bg: "gray.100" }} p={2} borderRadius="md" bg={selectedCategory === category.name ? "orange.100" : "transparent"}>
+                        <Text color="orange.600" fontWeight="medium">{category.name}</Text>
                         <Text>{category.count}</Text>
                       </Flex>
                     ))}
@@ -228,11 +228,11 @@ function BlogPage() {
                   <Divider mb={4} />
                   <Flex flexWrap="wrap" gap={2}>
                     {popularTags.map((tag, index) => (
-                      <Tag key={index} colorScheme={selectedTags.includes(tag) ? "blue" : "blue"} variant={selectedTags.includes(tag) ? "solid" : "subtle"} size="md" borderRadius="full" cursor="pointer" _hover={{ bg: selectedTags.includes(tag) ? "blue.600" : "blue.100" }} onClick={() => handleTagClick(tag)}>{tag}</Tag>
+                      <Tag key={index} colorScheme={selectedTags.includes(tag) ? "blue" : "blue"} variant={selectedTags.includes(tag) ? "solid" : "subtle"} size="md" borderRadius="full" cursor="pointer" _hover={{ bg: selectedTags.includes(tag) ? "orange.600" : "orange.100" }} onClick={() => handleTagClick(tag)}>{tag}</Tag>
                     ))}
                   </Flex>
                 </Box>
-                <Box bg="blue.50" p={6} borderRadius="lg" boxShadow="sm">
+                <Box bg="orange.50" p={6} borderRadius="lg" boxShadow="sm">
                   <Heading as="h3" size="md" mb={4} fontWeight="medium">Need Expert Help?</Heading>
                   <Text mb={4}>Our team can help you implement the strategies...</Text>
                   <Button colorScheme="blue" width="full" as="a" href="/contact-sales">Contact Us</Button>

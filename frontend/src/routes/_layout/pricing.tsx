@@ -175,7 +175,7 @@ function PricingPage() {
   return (
     <>
       {/* Pricing Hero Section */}
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={8} fontWeight="medium">
             Pricing That Scales With You
@@ -215,7 +215,7 @@ function PricingPage() {
                 borderRadius="lg"
                 overflow="hidden"
                 boxShadow={plan.popular ? "lg" : "md"}
-                bg={plan.popular ? "blue.50" : "white"}
+                bg={plan.popular ? "orange.50" : "white"}
                 position="relative"
               >
                 {plan.popular && (
@@ -314,7 +314,7 @@ function PricingPage() {
                 <Tr bg="gray.100">
                   <Th width="30%">Feature</Th>
                   <Th width="17.5%">Starter</Th>
-                  <Th width="17.5%" bg="blue.50">Analyst</Th>
+                  <Th width="17.5%" bg="orange.50">Analyst</Th>
                   <Th width="17.5%">Business</Th>
                   <Th width="17.5%">Enterprise</Th>
                 </Tr>
@@ -335,7 +335,7 @@ function PricingPage() {
                             ? (feature.starter ? <CheckCircleIcon color="green.500" /> : <CloseIcon color="red.500" fontSize="xs" />)
                             : feature.starter}
                         </Td>
-                        <Td bg="blue.50">
+                        <Td bg="orange.50">
                           {typeof feature.analyst === 'boolean'
                             ? (feature.analyst ? <CheckCircleIcon color="green.500" /> : <CloseIcon color="red.500" fontSize="xs" />)
                             : feature.analyst}
@@ -371,7 +371,7 @@ function PricingPage() {
               {faqItems.map((faq, index) => (
                 <AccordionItem key={index} borderColor="gray.200">
                   <h3>
-                    <AccordionButton py={4} px={6} _expanded={{ bg: "blue.50", color: "blue.600" }}>
+                    <AccordionButton py={4} px={6} _expanded={{ bg: "orange.50", color: "orange.600" }}>
                       <Box flex="1" textAlign="left" fontWeight="medium" fontSize="md">
                         {faq.question}
                       </Box>
@@ -389,7 +389,7 @@ function PricingPage() {
       </Box>
 
       {/* Usage Statistics Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={8} fontWeight="medium">
             Data Powerhouse
@@ -399,22 +399,22 @@ function PricingPage() {
           </Text>
           <SimpleGrid columns={{ base: 2, md: 4 }} spacing={10}>
             <VStack>
-              <Heading as="h3" size="2xl" color="blue.600">99.9%</Heading>
+              <Heading as="h3" size="2xl" color="orange.600">99.9%</Heading>
               <Text fontWeight="medium">Uptime Reliability</Text>
               <Text fontSize="sm" color="gray.600">Built for the enterprise</Text>
             </VStack>
             <VStack>
-              <Heading as="h3" size="2xl" color="blue.600">5B+</Heading>
+              <Heading as="h3" size="2xl" color="orange.600">5B+</Heading>
               <Text fontWeight="medium">Monthly Requests</Text>
               <Text fontSize="sm" color="gray.600">Across our network</Text>
             </VStack>
             <VStack>
-              <Heading as="h3" size="2xl" color="blue.600">15K+</Heading>
+              <Heading as="h3" size="2xl" color="orange.600">15K+</Heading>
               <Text fontWeight="medium">Active Users</Text>
               <Text fontSize="sm" color="gray.600">From solo to scale</Text>
             </VStack>
             <VStack>
-              <Heading as="h3" size="2xl" color="blue.600">190+</Heading>
+              <Heading as="h3" size="2xl" color="orange.600">190+</Heading>
               <Text fontWeight="medium">Countries Covered</Text>
               <Text fontSize="sm" color="gray.600">Global reach</Text>
             </VStack>
@@ -422,15 +422,15 @@ function PricingPage() {
           <Box mt={16} p={8} bg="white" borderRadius="lg" boxShadow="md">
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
               <VStack align="flex-start">
-                <Heading as="h3" size="md" color="blue.600" mb={2}>Top-Tier Security</Heading>
+                <Heading as="h3" size="md" color="orange.600" mb={2}>Top-Tier Security</Heading>
                 <Text>SOC 2 compliant, fully encrypted, and audited regularly.</Text>
               </VStack>
               <VStack align="flex-start">
-                <Heading as="h3" size="md" color="blue.600" mb={2}>Scales With You</Heading>
+                <Heading as="h3" size="md" color="orange.600" mb={2}>Scales With You</Heading>
                 <Text>Handles peak demand without breaking a sweat.</Text>
               </VStack>
               <VStack align="flex-start">
-                <Heading as="h3" size="md" color="blue.600" mb={2}>Dev-Ready</Heading>
+                <Heading as="h3" size="md" color="orange.600" mb={2}>Dev-Ready</Heading>
                 <Text>APIs, SDKs, and examples to get you started fast.</Text>
               </VStack>
             </SimpleGrid>
@@ -439,7 +439,7 @@ function PricingPage() {
       </Box>
 
       {/* Call to Action */}
-      <Box py={16} bg="blue.600" color="white">
+      <Box py={16} bg="orange.600" color="white">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={6} fontWeight="medium" color="white">
             Start Collecting Data Today
@@ -453,7 +453,7 @@ function PricingPage() {
               variant="outline"
               borderColor="white"
               color="white"
-              _hover={{ bg: "blue.700" }}
+              _hover={{ bg: "orange.700" }}
               as="a"
               href="https://cloud.thedataproxy.com/signup"
             >
@@ -464,7 +464,7 @@ function PricingPage() {
               variant="outline"
               borderColor="white"
               color="white"
-              _hover={{ bg: "blue.700" }}
+              _hover={{ bg: "orange.700" }}
               as="a"
               href="/contact"
             >

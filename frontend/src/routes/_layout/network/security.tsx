@@ -43,7 +43,7 @@ function SecurityFeaturesPage() {
   return (
     <>
       {/* Security Features Hero Section */}
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={8} fontWeight="medium">
             Security Features
@@ -117,7 +117,7 @@ function SecurityFeaturesPage() {
       </Box>
       
       {/* Security Tiers Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={12} fontWeight="medium">
             Security Protection Tiers
@@ -136,7 +136,7 @@ function SecurityFeaturesPage() {
                   <Flex justify="space-between" align="center" mt={1}>
                     
                     <Text color="gray.500" fontSize="sm" fontWeight="normal">Protocols</Text>
-                    <StatNumber color="blue.400">{tier.protocols}</StatNumber>
+                    <StatNumber color="orange.400">{tier.protocols}</StatNumber>
                   </Flex>
                 </Stat>
                 <Text fontSize="sm" color="gray.600">
@@ -203,7 +203,7 @@ function SecurityFeaturesPage() {
       </Box>
       
       {/* Security Platform Features Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={8} fontWeight="medium">
             Security Platform Features
@@ -304,7 +304,7 @@ function SecurityFeaturesPage() {
       </Box>
       
       {/* Security Framework Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={8} fontWeight="medium">
             Comprehensive Security Framework
@@ -378,7 +378,7 @@ function SecurityFeaturesPage() {
               variant="outline"
               borderColor="white"
               color="white"
-              _hover={{ bg: "blue.700" }}
+              _hover={{ bg: "orange.700" }}
               as="a"
               href="https://cloud.thedataproxy.com/signup"
             >

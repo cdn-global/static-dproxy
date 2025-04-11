@@ -82,7 +82,7 @@ function FAQPage() {
   return (
     <>
       {/* FAQ Hero Section */}
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={8} fontWeight="medium">
             Frequently Asked Questions
@@ -100,7 +100,7 @@ function FAQPage() {
               <Input 
                 placeholder="Search for questions and answers" 
                 bg="white" 
-                focusBorderColor="blue.500"
+                focusBorderColor="orange.500"
                 borderRadius="md"
                 boxShadow="sm"
               />
@@ -109,19 +109,19 @@ function FAQPage() {
           
           {/* <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
             <VStack align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Getting Started</Heading>
+              <Heading as="h3" size="md" color="orange.600">Getting Started</Heading>
               <Text>Basic information about our platform, account creation, and essential features.</Text>
               <Button colorScheme="blue" variant="link" rightIcon={<InfoIcon />}>Learn more</Button>
             </VStack>
             
             <VStack align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Billing & Accounts</Heading>
+              <Heading as="h3" size="md" color="orange.600">Billing & Accounts</Heading>
               <Text>Information about pricing, subscription management, payments, and account settings.</Text>
               <Button colorScheme="blue" variant="link" rightIcon={<InfoIcon />}>Learn more</Button>
             </VStack>
             
             <VStack align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Technical Support</Heading>
+              <Heading as="h3" size="md" color="orange.600">Technical Support</Heading>
               <Text>Troubleshooting guides, error resolution, and technical assistance for our platform.</Text>
               <Button colorScheme="blue" variant="link" rightIcon={<InfoIcon />}>Learn more</Button>
             </VStack>
@@ -139,11 +139,11 @@ function FAQPage() {
                 <Stat mb={4}>
                   <StatLabel fontSize="lg" fontWeight="medium">{category.category}</StatLabel>
                   <Flex justify="space-between" align="center">
-                    <StatNumber color="blue.600">{category.articles}</StatNumber>
+                    <StatNumber color="orange.600">{category.articles}</StatNumber>
                     <Text color="gray.500" fontSize="sm" fontWeight="normal">Articles</Text>
                   </Flex>
                   <Flex justify="space-between" align="center" mt={1}>
-                    <StatNumber color="blue.400">{category.views}</StatNumber>
+                    <StatNumber color="orange.400">{category.views}</StatNumber>
                     <Text color="gray.500" fontSize="sm" fontWeight="normal">Monthly Views</Text>
                   </Flex>
                 </Stat>
@@ -172,7 +172,7 @@ function FAQPage() {
               {faqItems.map((faq, index) => (
                 <AccordionItem key={index} borderColor="gray.300">
                   <h3>
-                    <AccordionButton py={4} px={6} _expanded={{ bg: "blue.50", color: "blue.600" }}>
+                    <AccordionButton py={4} px={6} _expanded={{ bg: "orange.50", color: "orange.600" }}>
                       <Box flex="1" textAlign="left" fontWeight="medium" fontSize="md">
                         {faq.question}
                       </Box>
@@ -203,7 +203,7 @@ function FAQPage() {
             {popularQuestions.map((article, index) => (
               <Flex key={index} p={6} bg="gray.50" borderRadius="md" boxShadow="sm" align="flex-start">
                 <Box w="50px" h="50px" mr={4} display="flex" alignItems="center" justifyContent="center">
-                  <QuestionIcon boxSize="30px" color="blue.600" />
+                  <QuestionIcon boxSize="30px" color="orange.600" />
                 </Box>
                 <Box>
                   <Flex justify="space-between" align="center" mb={2}>
@@ -226,7 +226,7 @@ function FAQPage() {
       </Box> */}
       
       {/* Need More Help Section */}
-      <Box py={16} bg="blue.600" color="white">
+      <Box py={16} bg="orange.600" color="white">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={6} fontWeight="medium" color="white">
             Didn't Find Your Answer?
@@ -239,7 +239,7 @@ function FAQPage() {
           <Button
               size="lg"
               bg="white"
-              color="blue.500"
+              color="orange.500"
               _hover={{ bg: "gray.100" }}
               as="a"
               href="/demo-request"
@@ -252,7 +252,7 @@ function FAQPage() {
               variant="outline"
               borderColor="white"
               color="white"
-              _hover={{ bg: "blue.700" }}
+              _hover={{ bg: "orange.700" }}
               as="a"
               href="https://cloud.thedataproxy.com/signup"
             >

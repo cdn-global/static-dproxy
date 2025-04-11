@@ -191,7 +191,7 @@ function BlogPostDetails() {
   if (loading) {
     return (
       <Flex justify="center" align="center" minH="100vh">
-        <Spinner size="xl" color="blue.500" />
+        <Spinner size="xl" color="orange.500" />
       </Flex>
     );
   }

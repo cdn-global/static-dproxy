@@ -63,7 +63,7 @@ function BlogPage() {
   if (loading) {
     return (
       <Flex justify="center" align="center" minH="100vh">
-        <Spinner size="xl" color="blue.500" />
+        <Spinner size="xl" color="orange.500" />
       </Flex>
     );
   }
@@ -107,7 +107,7 @@ function BlogPage() {
   return (
     <>
       {/* Blog Hero Section */}
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={6} fontWeight="medium">
           Insights and Trends at TheDataProxy
@@ -249,7 +249,7 @@ function BlogPage() {
       </Box>
 
       {/* Call to Action */}
-      <Box py={16} bg="blue.600" color="white">
+      <Box py={16} bg="orange.600" color="white">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={6} fontWeight="medium" color="white">
             Master Web Scraping Today
@@ -263,7 +263,7 @@ function BlogPage() {
             <Button
               size="lg"
               bg="white"
-              color="blue.500"
+              color="orange.500"
               _hover={{ bg: "gray.100" }}
               as="a"
               href="/demo-request"
@@ -276,7 +276,7 @@ function BlogPage() {
               variant="outline"
               borderColor="white"
               color="white"
-              _hover={{ bg: "blue.700" }}
+              _hover={{ bg: "orange.700" }}
               as="a"
               href="https://cloud.thedataproxy.com/signup"
             >
@@ -376,9 +376,9 @@ function BlogPage() {
                         _hover={{ bg: "gray.100" }}
                         p={2}
                         borderRadius="md"
-                        bg={selectedCategory === category.name ? "blue.100" : "transparent"}
+                        bg={selectedCategory === category.name ? "orange.100" : "transparent"}
                       >
-                        <Text color="blue.600" fontWeight="medium">
+                        <Text color="orange.600" fontWeight="medium">
                           {category.name}
                         </Text>
                         <Text>
@@ -403,7 +403,7 @@ function BlogPage() {
                         size="md"
                         borderRadius="full"
                         cursor="pointer"
-                        _hover={{ bg: selectedTags.includes(tag) ? "blue.600" : "blue.100" }}
+                        _hover={{ bg: selectedTags.includes(tag) ? "orange.600" : "orange.100" }}
                         onClick={() => handleTagClick(tag)}
                       >
                         {tag}
@@ -412,7 +412,7 @@ function BlogPage() {
                   </Flex>
                 </Box>
 
-                <Box bg="blue.50" p={6} borderRadius="lg" boxShadow="sm">
+                <Box bg="orange.50" p={6} borderRadius="lg" boxShadow="sm">
                   <Heading as="h3" size="md" mb={4} fontWeight="medium">
                     Need Expert Help?
                   </Heading>

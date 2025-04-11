@@ -43,7 +43,7 @@ function SEOMonitoringPage() {
   return (
     <>
       {/* SEO Monitoring Hero Section */}
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={8} fontWeight="medium">
             SEO Monitoring Platform
@@ -55,17 +55,17 @@ function SEOMonitoringPage() {
           
           <Flex justify="space-between" flexWrap="wrap" gap={6}>
             <VStack flex="1" minW="280px" align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Rank Tracking</Heading>
+              <Heading as="h3" size="md" color="orange.600">Rank Tracking</Heading>
               <Text>Monitor your rankings for unlimited keywords across all major search engines. Track daily position changes with location-specific results for any country, region, or city worldwide.</Text>
             </VStack>
             
             <VStack flex="1" minW="280px" align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Technical Audits</Heading>
+              <Heading as="h3" size="md" color="orange.600">Technical Audits</Heading>
               <Text>Automatically identify and fix critical technical SEO issues with our comprehensive site audit tool. Crawl your entire website, detect errors, and get prioritized recommendations for improvement.</Text>
             </VStack>
             
             <VStack flex="1" minW="280px" align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Competitive Analysis</Heading>
+              <Heading as="h3" size="md" color="orange.600">Competitive Analysis</Heading>
               <Text>Benchmark your performance against competitors with side-by-side comparisons of rankings, content, and backlinks. Identify gaps in your strategy and uncover new opportunities.</Text>
             </VStack>
           </Flex>
@@ -82,7 +82,7 @@ function SEOMonitoringPage() {
           <Grid templateColumns={{ base: "1fr", md: "1fr 1fr", lg: "1fr 1fr 1fr" }} gap={10} mt={10}>
             <VStack align="flex-start" spacing={4} bg="gray.50" p={6} borderRadius="md">
               <Stat>
-                <StatNumber color="blue.600">47%</StatNumber>
+                <StatNumber color="orange.600">47%</StatNumber>
                 <StatLabel>Average Ranking Improvement</StatLabel>
               </Stat>
               <Text>
@@ -93,7 +93,7 @@ function SEOMonitoringPage() {
             
             <VStack align="flex-start" spacing={4} bg="gray.50" p={6} borderRadius="md">
               <Stat>
-                <StatNumber color="blue.600">83%</StatNumber>
+                <StatNumber color="orange.600">83%</StatNumber>
                 <StatLabel>Time Saved on Reporting</StatLabel>
               </Stat>
               <Text>
@@ -104,7 +104,7 @@ function SEOMonitoringPage() {
             
             <VStack align="flex-start" spacing={4} bg="gray.50" p={6} borderRadius="md">
               <Stat>
-                <StatNumber color="blue.600">35%</StatNumber>
+                <StatNumber color="orange.600">35%</StatNumber>
                 <StatLabel>Organic Traffic Growth</StatLabel>
               </Stat>
               <Text>
@@ -117,7 +117,7 @@ function SEOMonitoringPage() {
       </Box>
       
       {/* SEO Tools Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={12} fontWeight="medium">
             Comprehensive SEO Toolkit
@@ -129,11 +129,11 @@ function SEOMonitoringPage() {
                 <Stat mb={4}>
                   <StatLabel fontSize="lg" fontWeight="medium">{tool.tool}</StatLabel>
                   <Flex justify="space-between" align="center">
-                    <StatNumber color="blue.600">{tool.metrics}</StatNumber>
+                    <StatNumber color="orange.600">{tool.metrics}</StatNumber>
                     <Text color="gray.500" fontSize="sm" fontWeight="normal">Metrics</Text>
                   </Flex>
                   <Flex justify="space-between" align="center" mt={1}>
-                    <StatNumber color="blue.400">{tool.keywords}</StatNumber>
+                    <StatNumber color="orange.400">{tool.keywords}</StatNumber>
                     <Text color="gray.500" fontSize="sm" fontWeight="normal">Keywords</Text>
                   </Flex>
                 </Stat>
@@ -201,7 +201,7 @@ function SEOMonitoringPage() {
       </Box>
       
       {/* Platform Features Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={8} fontWeight="medium">
             SEO Platform Features
@@ -209,52 +209,52 @@ function SEOMonitoringPage() {
           
           <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
             <Box p={8} bg="white" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={5} color="blue.600">Rank Tracking & SERP Analysis</Heading>
+              <Heading as="h3" size="md" mb={5} color="orange.600">Rank Tracking & SERP Analysis</Heading>
               <List spacing={3}>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Daily Rank Updates</Text> - Track daily position changes for all your target keywords</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Location-Specific Results</Text> - Monitor rankings for any country, region, city, or postal code</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Mobile vs. Desktop</Text> - Compare performance across different devices and identify optimization opportunities</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">SERP Feature Tracking</Text> - Monitor featured snippets, knowledge panels, local packs, and other rich results</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Competitor Benchmarking</Text> - Track how you stack up against competitors for your target keywords</Text>
                 </ListItem>
               </List>
             </Box>
             
             <Box p={8} bg="white" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={5} color="blue.600">Technical SEO & Content Analysis</Heading>
+              <Heading as="h3" size="md" mb={5} color="orange.600">Technical SEO & Content Analysis</Heading>
               <List spacing={3}>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Comprehensive Site Audits</Text> - Identify and fix technical issues affecting your search visibility</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Content Gap Analysis</Text> - Discover keywords your competitors rank for that you don't</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Page Speed Insights</Text> - Track Core Web Vitals and get recommendations for improving page performance</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Backlink Monitoring</Text> - Track new and lost backlinks with quality metrics and outreach opportunities</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">AI Content Recommendations</Text> - Get topic and semantic optimization suggestions to improve relevance</Text>
                 </ListItem>
               </List>
@@ -272,7 +272,7 @@ function SEOMonitoringPage() {
           
           <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
             <Box p={8} bg="gray.50" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={4} color="blue.600">E-commerce Site Increases Organic Traffic by 156%</Heading>
+              <Heading as="h3" size="md" mb={4} color="orange.600">E-commerce Site Increases Organic Traffic by 156%</Heading>
               <Text mb={4}>
                 A mid-sized e-commerce retailer used our SEO platform to identify critical technical issues 
                 and content gaps affecting their product pages. After implementing our recommendations, they 
@@ -287,7 +287,7 @@ function SEOMonitoringPage() {
             </Box>
             
             <Box p={8} bg="gray.50" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={4} color="blue.600">SaaS Company Dominates Featured Snippets</Heading>
+              <Heading as="h3" size="md" mb={4} color="orange.600">SaaS Company Dominates Featured Snippets</Heading>
               <Text mb={4}>
                 A B2B software provider leveraged our SERP feature tracking and content optimization tools 
                 to target featured snippets for high-intent keywords. By optimizing their content based on our 
@@ -305,7 +305,7 @@ function SEOMonitoringPage() {
       </Box>
       
       {/* Coverage Statistics Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={8} fontWeight="medium">
             Comprehensive SEO Monitoring
@@ -317,32 +317,32 @@ function SEOMonitoringPage() {
           <Box bg="white" p={6} borderRadius="md" boxShadow="md">
             <SimpleGrid columns={{ base: 2, md: 3, lg: 6 }} spacing={4} mt={8}>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Search Engines</Text>
+                <Text fontWeight="bold" color="orange.600">Search Engines</Text>
                 <Text>Google</Text>
                 <Text>Bing, Yahoo & 7 more</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Countries</Text>
+                <Text fontWeight="bold" color="orange.600">Countries</Text>
                 <Text>190+</Text>
                 <Text>Local Results</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Keywords</Text>
+                <Text fontWeight="bold" color="orange.600">Keywords</Text>
                 <Text>Unlimited</Text>
                 <Text>No Restrictions</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Technical Checks</Text>
+                <Text fontWeight="bold" color="orange.600">Technical Checks</Text>
                 <Text>250+</Text>
                 <Text>Site Audit Points</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Backlink Data</Text>
+                <Text fontWeight="bold" color="orange.600">Backlink Data</Text>
                 <Text>40+ Trillion</Text>
                 <Text>Links Indexed</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">SERP Features</Text>
+                <Text fontWeight="bold" color="orange.600">SERP Features</Text>
                 <Text>25+</Text>
                 <Text>Types Tracked</Text>
               </VStack>
@@ -352,7 +352,7 @@ function SEOMonitoringPage() {
       </Box>
       
       {/* Call to Action */}
-      <Box py={16} bg="blue.600" color="white">
+      <Box py={16} bg="orange.600" color="white">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={6} fontWeight="medium" color="white">
             Transform Your SEO Strategy
@@ -366,7 +366,7 @@ function SEOMonitoringPage() {
           <Button
               size="lg"
               bg="white"
-              color="blue.500"
+              color="orange.500"
               _hover={{ bg: "gray.100" }}
               as="a"
               href="/demo-request"
@@ -379,7 +379,7 @@ function SEOMonitoringPage() {
               variant="outline"
               borderColor="white"
               color="white"
-              _hover={{ bg: "blue.700" }}
+              _hover={{ bg: "orange.700" }}
               as="a"
               href="https://cloud.thedataproxy.com/signup"
             >

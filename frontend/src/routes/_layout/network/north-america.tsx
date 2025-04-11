@@ -40,7 +40,7 @@ function NorthAmericaProxiesPage() {
   return (
     <>
       {/* North America Proxies Hero Section */}
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={8} fontWeight="medium">
             North America Proxies
@@ -52,17 +52,17 @@ function NorthAmericaProxiesPage() {
           
           <Flex justify="space-between" flexWrap="wrap" gap={6}>
             <VStack flex="1" minW="280px" align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Regional Coverage</Heading>
+              <Heading as="h3" size="md" color="orange.600">Regional Coverage</Heading>
               <Text>Connect through residential, datacenter, and mobile IPs from the United States, Canada, and Mexico. Target specific states, provinces, cities, or postal codes for precise geo-targeting.</Text>
             </VStack>
             
             <VStack flex="1" minW="280px" align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Authentic Local Experience</Heading>
+              <Heading as="h3" size="md" color="orange.600">Authentic Local Experience</Heading>
               <Text>Experience websites and apps exactly as North American users do with genuine residential IPs that reflect real user attributes, browser fingerprints, and network characteristics.</Text>
             </VStack>
             
             <VStack flex="1" minW="280px" align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Customizable Selection</Heading>
+              <Heading as="h3" size="md" color="orange.600">Customizable Selection</Heading>
               <Text>Choose locations based on specific criteria including country, state/province, city, ISP, network type, and connection speed. Save custom location profiles for frequent use cases.</Text>
             </VStack>
           </Flex>
@@ -79,7 +79,7 @@ function NorthAmericaProxiesPage() {
           <Grid templateColumns={{ base: "1fr", md: "1fr 1fr", lg: "1fr 1fr 1fr" }} gap={10} mt={10}>
             <VStack align="flex-start" spacing={4} bg="gray.50" p={6} borderRadius="md">
               <Stat>
-                <StatNumber color="blue.600">100%</StatNumber>
+                <StatNumber color="orange.600">100%</StatNumber>
                 <StatLabel>Regional Market Coverage</StatLabel>
               </Stat>
               <Text>
@@ -90,7 +90,7 @@ function NorthAmericaProxiesPage() {
             
             <VStack align="flex-start" spacing={4} bg="gray.50" p={6} borderRadius="md">
               <Stat>
-                <StatNumber color="blue.600">91%</StatNumber>
+                <StatNumber color="orange.600">91%</StatNumber>
                 <StatLabel>Testing Accuracy Increase</StatLabel>
               </Stat>
               <Text>
@@ -101,7 +101,7 @@ function NorthAmericaProxiesPage() {
             
             <VStack align="flex-start" spacing={4} bg="gray.50" p={6} borderRadius="md">
               <Stat>
-                <StatNumber color="blue.600">2.3M+</StatNumber>
+                <StatNumber color="orange.600">2.3M+</StatNumber>
                 <StatLabel>Residential IPs</StatLabel>
               </Stat>
               <Text>
@@ -114,7 +114,7 @@ function NorthAmericaProxiesPage() {
       </Box>
       
       {/* Region Coverage Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={12} fontWeight="medium">
             North American Proxy Coverage
@@ -126,11 +126,11 @@ function NorthAmericaProxiesPage() {
                 <Stat mb={4}>
                   <StatLabel fontSize="lg" fontWeight="medium">{region.region}</StatLabel>
                   <Flex justify="space-between" align="center">
-                    <StatNumber color="blue.600">{region.states}</StatNumber>
+                    <StatNumber color="orange.600">{region.states}</StatNumber>
                     <Text color="gray.500" fontSize="sm" fontWeight="normal">States/Provinces</Text>
                   </Flex>
                   <Flex justify="space-between" align="center" mt={1}>
-                    <StatNumber color="blue.400">{region.cities}</StatNumber>
+                    <StatNumber color="orange.400">{region.cities}</StatNumber>
                     <Text color="gray.500" fontSize="sm" fontWeight="normal">Cities</Text>
                   </Flex>
                 </Stat>
@@ -198,7 +198,7 @@ function NorthAmericaProxiesPage() {
       </Box>
       
       {/* Platform Features Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={8} fontWeight="medium">
             North American Proxy Platform Features
@@ -206,52 +206,52 @@ function NorthAmericaProxiesPage() {
           
           <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
             <Box p={8} bg="white" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={5} color="blue.600">Geographic Targeting</Heading>
+              <Heading as="h3" size="md" mb={5} color="orange.600">Geographic Targeting</Heading>
               <List spacing={3}>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Country Selection</Text> - Access proxies from the United States, Canada, and Mexico with comprehensive coverage</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">State/Province Targeting</Text> - Select from all 50 US states, 13 Canadian provinces/territories, and 32 Mexican states</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">City Precision</Text> - Target specific cities with multiple proxies available in each location across North America</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">ISP Selection</Text> - Choose proxies from specific North American internet service providers or mobile carriers</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Region Rotation</Text> - Automatically rotate through proxies within specific North American regions</Text>
                 </ListItem>
               </List>
             </Box>
             
             <Box p={8} bg="white" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={5} color="blue.600">Control & Integration</Heading>
+              <Heading as="h3" size="md" mb={5} color="orange.600">Control & Integration</Heading>
               <List spacing={3}>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Location Groups</Text> - Create and save custom North American location groups for frequent testing scenarios</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Location API</Text> - Access all North American location features programmatically through our comprehensive API</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Browser Integration</Text> - Use browser extensions to quickly switch between North American locations in your testing</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Location Validation</Text> - Verify the accuracy of North American proxy locations with our built-in testing tools</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Location Analytics</Text> - Track proxy performance by location with detailed success metrics across North America</Text>
                 </ListItem>
               </List>
@@ -269,7 +269,7 @@ function NorthAmericaProxiesPage() {
           
           <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
             <Box p={8} bg="gray.50" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={4} color="blue.600">Retail Chain Optimizes Cross-Border Strategy</Heading>
+              <Heading as="h3" size="md" mb={4} color="orange.600">Retail Chain Optimizes Cross-Border Strategy</Heading>
               <Text mb={4}>
                 A major retail chain used our North American proxies to test their website across all US states, 
                 Canadian provinces, and Mexican regions. They identified critical pricing and promotional 
@@ -283,7 +283,7 @@ function NorthAmericaProxiesPage() {
             </Box>
             
             <Box p={8} bg="gray.50" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={4} color="blue.600">Streaming Service Perfects Regional Content</Heading>
+              <Heading as="h3" size="md" mb={4} color="orange.600">Streaming Service Perfects Regional Content</Heading>
               <Text mb={4}>
                 A leading streaming platform implemented our North American proxies to monitor content availability 
                 and recommendations across different regions. They discovered significant discrepancies in their 
@@ -300,7 +300,7 @@ function NorthAmericaProxiesPage() {
       </Box>
       
       {/* North America Map Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={8} fontWeight="medium">
             North American Proxy Network
@@ -312,19 +312,19 @@ function NorthAmericaProxiesPage() {
           <Box bg="white" p={6} borderRadius="md" boxShadow="md">
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} mt={8}>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">United States</Text>
+                <Text fontWeight="bold" color="orange.600">United States</Text>
                 <Text>50 States</Text>
                 <Text>112 Cities</Text>
                 <Text>All Major ISPs</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Canada</Text>
+                <Text fontWeight="bold" color="orange.600">Canada</Text>
                 <Text>13 Provinces/Territories</Text>
                 <Text>42 Cities</Text>
                 <Text>All Major ISPs</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Mexico</Text>
+                <Text fontWeight="bold" color="orange.600">Mexico</Text>
                 <Text>32 States</Text>
                 <Text>28 Cities</Text>
                 <Text>All Major ISPs</Text>
@@ -335,7 +335,7 @@ function NorthAmericaProxiesPage() {
       </Box>
       
       {/* Call to Action */}
-      <Box py={16} bg="blue.600" color="white">
+      <Box py={16} bg="orange.600" color="white">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={6} fontWeight="medium" color="white">
             Access Any North American Location
@@ -349,7 +349,7 @@ function NorthAmericaProxiesPage() {
                     <Button
                         size="lg"
                         bg="white"
-                        color="blue.500"
+                        color="orange.500"
                         _hover={{ bg: "gray.100" }}
                         as="a"
                         href="/demo-request"
@@ -362,7 +362,7 @@ function NorthAmericaProxiesPage() {
               variant="outline"
               borderColor="white"
               color="white"
-              _hover={{ bg: "blue.700" }}
+              _hover={{ bg: "orange.700" }}
               as="a"
               href="https://cloud.thedataproxy.com/signup"
             >

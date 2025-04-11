@@ -43,7 +43,7 @@ function TrainingAIPage() {
   return (
     <>
       {/* AI Training Hero Section */}
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={8} fontWeight="medium">
            AI Training Solutions
@@ -117,7 +117,7 @@ function TrainingAIPage() {
       </Box>
       
       {/* Industry Applications Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={12} fontWeight="medium">
             Industry-Specific AI Training Applications
@@ -125,7 +125,7 @@ function TrainingAIPage() {
           
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
             {industryData.map((industry, index) => (
-              <Box key={index} p={6} bg="white" borderRadius="md" boxShadow="sm" borderColor="blue.100">
+              <Box key={index} p={6} bg="white" borderRadius="md" boxShadow="sm" borderColor="orange.100">
                 <Stat mb={4}>
                   <StatLabel fontSize="lg" fontWeight="medium">{industry.industry}</StatLabel>
                   <StatNumber color="purple.500">{industry.growth}%</StatNumber>
@@ -198,7 +198,7 @@ function TrainingAIPage() {
       </Box>
       
       {/* Platform Features Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={8} fontWeight="medium">
             AI Training Platform Features
@@ -298,7 +298,7 @@ function TrainingAIPage() {
       </Box>
       
       {/* Framework Partners */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={8} fontWeight="medium">
             Framework Partners

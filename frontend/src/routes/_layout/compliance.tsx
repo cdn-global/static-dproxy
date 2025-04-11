@@ -373,7 +373,7 @@ function CompliancePage() {
             </VStack>
             <Text fontSize="md" mt={4}>
               For whistleblower reports or confidential compliance concerns, please use our anonymous reporting 
-              channel at <Link color="blue.500" href="https://thedataproxy.com/report">thedataproxy.com/report</Link>.
+              channel at <Link color="orange.500" href="https://thedataproxy.com/report">thedataproxy.com/report</Link>.
             </Text>
           </Box>
         </VStack>

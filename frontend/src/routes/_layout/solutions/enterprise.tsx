@@ -87,7 +87,7 @@ function SolutionsPage() {
   return (
     <>
       {/* Hero Section */}
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={8} fontWeight="medium">
             Enterprise Solutions
@@ -154,7 +154,7 @@ function SolutionsPage() {
       </Box>
       
       {/* Key Benefits Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={12} fontWeight="medium">
             The Impact of Our Solutions
@@ -218,7 +218,7 @@ function SolutionsPage() {
           </Heading>
           
           <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
-            <Box p={6} borderWidth="1px" borderColor="blue.100" borderRadius="md" boxShadow="sm">
+            <Box p={6} borderWidth="1px" borderColor="orange.100" borderRadius="md" boxShadow="sm">
               <VStack align="flex-start" spacing={4}>
                 <Image 
                   src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/tensorflow.png" 
@@ -243,7 +243,7 @@ function SolutionsPage() {
               </VStack>
             </Box>
             
-            <Box p={6} borderWidth="1px" borderColor="blue.100" borderRadius="md" boxShadow="sm">
+            <Box p={6} borderWidth="1px" borderColor="orange.100" borderRadius="md" boxShadow="sm">
               <VStack align="flex-start" spacing={4}>
                 <Image 
                   src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/elasticsearch.png" 
@@ -268,7 +268,7 @@ function SolutionsPage() {
               </VStack>
             </Box>
             
-            <Box p={6} borderWidth="1px" borderColor="blue.100" borderRadius="md" boxShadow="sm">
+            <Box p={6} borderWidth="1px" borderColor="orange.100" borderRadius="md" boxShadow="sm">
               <VStack align="flex-start" spacing={4}>
                 <Image 
                   src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/kubernetes.png" 
@@ -297,7 +297,7 @@ function SolutionsPage() {
       </Box>
       
       {/* Implementation Process */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={12} fontWeight="medium">
             Our Implementation Process

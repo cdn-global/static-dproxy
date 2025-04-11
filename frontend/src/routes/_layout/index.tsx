@@ -21,7 +21,7 @@ function LandingPage() {
         bgImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa"
       />
     {/* Section 3: Proxy Network Coverage for Web Scraping */}
-    <Box py={16} bg="blue.50" color="gray.800">
+    <Box py={16} bg="orange.50" color="gray.800">
         <Heading as="h2" size="2xl" textAlign="center" mb={10} fontWeight="medium">
           Global Web Scraping Proxy Network
         </Heading>
@@ -49,7 +49,7 @@ function LandingPage() {
         </Flex>
       </Box>
         {/* Cloud Provider Links */}
-        <Box py={10} bg="blue.50">
+        <Box py={10} bg="orange.50">
         <Flex justify="center" gap={8} flexWrap="wrap">
           <Link href="https://aws.amazon.com" isExternal>
             <Image
@@ -147,7 +147,7 @@ function LandingPage() {
         </Grid>
       </Box>
 
-      {/* <Box py={16} bg="blue.50" maxW="1200px" mx="auto" px={4}>
+      {/* <Box py={16} bg="orange.50" maxW="1200px" mx="auto" px={4}>
   <VStack spacing={8} textAlign="center">
     <Heading as="h2" size="2xl" color="gray.800" fontWeight="medium">
       Web Scraping Technology Stack
@@ -239,7 +239,7 @@ function LandingPage() {
   </VStack>
 </Box> */}
 
-          <Box py={16} bg="blue.50" maxW="1200px" mx="auto" px={4}>
+          <Box py={16} bg="orange.50" maxW="1200px" mx="auto" px={4}>
         <Heading as="h2" size="2xl" textAlign="center" mb={10} color="gray.800" fontWeight="medium">
           Web Scraping Business Solutions
         </Heading>

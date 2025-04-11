@@ -43,7 +43,7 @@ function RealEstateDataScrapingPage() {
   return (
     <>
       {/* Real Estate Data Scraping Hero Section */}
-      <Box py={16} bg="blue.50" color="gray.800">
+      <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h1" size="2xl" textAlign="center" mb={8} fontWeight="medium">
             Real Estate Data Scraping
@@ -55,17 +55,17 @@ function RealEstateDataScrapingPage() {
           
           <Flex justify="space-between" flexWrap="wrap" gap={6}>
             <VStack flex="1" minW="280px" align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Property Listing Data</Heading>
+              <Heading as="h3" size="md" color="orange.600">Property Listing Data</Heading>
               <Text>Collect detailed information from property listings including prices, features, square footage, lot size, bedrooms, bathrooms, and amenities from thousands of real estate websites and platforms.</Text>
             </VStack>
             
             <VStack flex="1" minW="280px" align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Market Analytics</Heading>
+              <Heading as="h3" size="md" color="orange.600">Market Analytics</Heading>
               <Text>Transform raw property data into actionable market insights with comprehensive analytics on pricing trends, inventory levels, days on market, and competitive positioning across different locations and property types.</Text>
             </VStack>
             
             <VStack flex="1" minW="280px" align="flex-start" bg="white" p={6} borderRadius="md" spacing={4}>
-              <Heading as="h3" size="md" color="blue.600">Investment Intelligence</Heading>
+              <Heading as="h3" size="md" color="orange.600">Investment Intelligence</Heading>
               <Text>Identify investment opportunities by analyzing property values, rental yields, appreciation rates, and neighborhood trends. Make data-driven decisions with comprehensive market intelligence.</Text>
             </VStack>
           </Flex>
@@ -82,7 +82,7 @@ function RealEstateDataScrapingPage() {
           <Grid templateColumns={{ base: "1fr", md: "1fr 1fr", lg: "1fr 1fr 1fr" }} gap={10} mt={10}>
             <VStack align="flex-start" spacing={4} bg="gray.50" p={6} borderRadius="md">
               <Stat>
-                <StatNumber color="blue.600">99.7%</StatNumber>
+                <StatNumber color="orange.600">99.7%</StatNumber>
                 <StatLabel>Data Accuracy Rate</StatLabel>
               </Stat>
               <Text>
@@ -93,7 +93,7 @@ function RealEstateDataScrapingPage() {
             
             <VStack align="flex-start" spacing={4} bg="gray.50" p={6} borderRadius="md">
               <Stat>
-                <StatNumber color="blue.600">85%</StatNumber>
+                <StatNumber color="orange.600">85%</StatNumber>
                 <StatLabel>Faster Market Insights</StatLabel>
               </Stat>
               <Text>
@@ -104,7 +104,7 @@ function RealEstateDataScrapingPage() {
             
             <VStack align="flex-start" spacing={4} bg="gray.50" p={6} borderRadius="md">
               <Stat>
-                <StatNumber color="blue.600">25M+</StatNumber>
+                <StatNumber color="orange.600">25M+</StatNumber>
                 <StatLabel>Daily Property Data Points</StatLabel>
               </Stat>
               <Text>
@@ -117,7 +117,7 @@ function RealEstateDataScrapingPage() {
       </Box>
       
       {/* Scraping Features Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={12} fontWeight="medium">
             Comprehensive Data Collection
@@ -129,11 +129,11 @@ function RealEstateDataScrapingPage() {
                 <Stat mb={4}>
                   <StatLabel fontSize="lg" fontWeight="medium">{feature.feature}</StatLabel>
                   <Flex justify="space-between" align="center">
-                    <StatNumber color="blue.600">{feature.sources}</StatNumber>
+                    <StatNumber color="orange.600">{feature.sources}</StatNumber>
                     <Text color="gray.500" fontSize="sm" fontWeight="normal">Sources</Text>
                   </Flex>
                   <Flex justify="space-between" align="center" mt={1}>
-                    <StatNumber color="blue.400">{feature.fields}</StatNumber>
+                    <StatNumber color="orange.400">{feature.fields}</StatNumber>
                     <Text color="gray.500" fontSize="sm" fontWeight="normal">Data Fields</Text>
                   </Flex>
                 </Stat>
@@ -201,7 +201,7 @@ function RealEstateDataScrapingPage() {
       </Box>
       
       {/* Detailed Features Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
           <Heading as="h2" size="xl" textAlign="center" mb={8} fontWeight="medium">
             Real Estate Data Platform Features
@@ -209,52 +209,52 @@ function RealEstateDataScrapingPage() {
           
           <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
             <Box p={8} bg="white" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={5} color="blue.600">Property Data Collection</Heading>
+              <Heading as="h3" size="md" mb={5} color="orange.600">Property Data Collection</Heading>
               <List spacing={3}>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Comprehensive Property Details</Text> - Extract all available property specifications and features</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Multi-source Integration</Text> - Combine data from MLS, portals, broker sites, and public records</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Sales History Tracking</Text> - Collect historical transaction data, pricing, and ownership changes</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Image & Media Collection</Text> - Gather property photos, floor plans, virtual tours, and videos</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Listing Activity Monitoring</Text> - Track days on market, price changes, and listing status updates</Text>
                 </ListItem>
               </List>
             </Box>
             
             <Box p={8} bg="white" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={5} color="blue.600">Market Intelligence & Analytics</Heading>
+              <Heading as="h3" size="md" mb={5} color="orange.600">Market Intelligence & Analytics</Heading>
               <List spacing={3}>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Market Trend Analysis</Text> - Identify pricing trends, inventory changes, and market dynamics</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Neighborhood Analytics</Text> - Comprehensive location data including demographics, amenities, and trends</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Valuation Models</Text> - Automated property valuations based on comparable sales and market data</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Investment Analysis</Text> - Calculate potential returns, cap rates, and ROI for investment properties</Text>
                 </ListItem>
                 <ListItem display="flex">
-                  <ListIcon as={CheckCircleIcon} color="blue.600" mt={1} />
+                  <ListIcon as={CheckCircleIcon} color="orange.600" mt={1} />
                   <Text><Text as="span" fontWeight="bold">Predictive Analytics</Text> - Machine learning models that forecast market trends and property values</Text>
                 </ListItem>
               </List>
@@ -272,7 +272,7 @@ function RealEstateDataScrapingPage() {
           
           <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
             <Box p={8} bg="gray.50" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={4} color="blue.600">Real Estate Investment Firm Increases ROI by 32%</Heading>
+              <Heading as="h3" size="md" mb={4} color="orange.600">Real Estate Investment Firm Increases ROI by 32%</Heading>
               <Text mb={4}>
                 A mid-sized real estate investment firm used our data scraping platform to analyze over 
                 250,000 properties across multiple markets. By leveraging comprehensive property data and 
@@ -288,7 +288,7 @@ function RealEstateDataScrapingPage() {
             </Box>
             
             <Box p={8} bg="gray.50" borderRadius="md" boxShadow="sm">
-              <Heading as="h3" size="md" mb={4} color="blue.600">PropTech Startup Builds Innovative Valuation Model</Heading>
+              <Heading as="h3" size="md" mb={4} color="orange.600">PropTech Startup Builds Innovative Valuation Model</Heading>
               <Text mb={4}>
                 A real estate technology startup used our data scraping platform to build a revolutionary 
                 property valuation model. By collecting detailed data on property features, neighborhood 
@@ -307,7 +307,7 @@ function RealEstateDataScrapingPage() {
       </Box>
       
       {/* Global Coverage Section */}
-      <Box py={16} bg="blue.50">
+      <Box py={16} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={8} fontWeight="medium">
             Global Real Estate Data Coverage
@@ -319,32 +319,32 @@ function RealEstateDataScrapingPage() {
           <Box bg="white" p={6} borderRadius="md" boxShadow="md">
             <SimpleGrid columns={{ base: 2, md: 3, lg: 6 }} spacing={4} mt={8}>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">MLS Systems</Text>
+                <Text fontWeight="bold" color="orange.600">MLS Systems</Text>
                 <Text>850+</Text>
                 <Text>Integrated</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Property Portals</Text>
+                <Text fontWeight="bold" color="orange.600">Property Portals</Text>
                 <Text>1,200+</Text>
                 <Text>Monitored</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Broker Websites</Text>
+                <Text fontWeight="bold" color="orange.600">Broker Websites</Text>
                 <Text>15,000+</Text>
                 <Text>Covered</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Countries</Text>
+                <Text fontWeight="bold" color="orange.600">Countries</Text>
                 <Text>42</Text>
                 <Text>Global Markets</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Property Types</Text>
+                <Text fontWeight="bold" color="orange.600">Property Types</Text>
                 <Text>35+</Text>
                 <Text>Categories</Text>
               </VStack>
               <VStack>
-                <Text fontWeight="bold" color="blue.600">Daily Listings</Text>
+                <Text fontWeight="bold" color="orange.600">Daily Listings</Text>
                 <Text>2.5M+</Text>
                 <Text>Processed</Text>
               </VStack>
@@ -354,7 +354,7 @@ function RealEstateDataScrapingPage() {
       </Box>
       
       {/* Call to Action */}
-      <Box py={16} bg="blue.600" color="white">
+      <Box py={16} bg="orange.600" color="white">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={6} fontWeight="medium" color="white">
             Transform Your Real Estate Intelligence
@@ -368,7 +368,7 @@ function RealEstateDataScrapingPage() {
           <Button
               size="lg"
               bg="white"
-              color="blue.500"
+              color="orange.500"
               _hover={{ bg: "gray.100" }}
               as="a"
               href="/demo-request"
@@ -380,7 +380,7 @@ function RealEstateDataScrapingPage() {
               variant="outline"
               borderColor="white"
               color="white"
-              _hover={{ bg: "blue.700" }}
+              _hover={{ bg: "orange.700" }}
               as="a"
               href="https://cloud.thedataproxy.com/signup"
             >

@@ -151,35 +151,35 @@ function SalesContactPage() {
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
                 <FormControl isRequired>
                   <FormLabel>First Name</FormLabel>
-                  <Input name="firstName" type="text" placeholder="Enter your first name" focusBorderColor="blue.400" />
+                  <Input name="firstName" type="text" placeholder="Enter your first name" focusBorderColor="orange.400" />
                 </FormControl>
                 
                 <FormControl isRequired>
                   <FormLabel>Last Name</FormLabel>
-                  <Input name="lastName" type="text" placeholder="Enter your last name" focusBorderColor="blue.400" />
+                  <Input name="lastName" type="text" placeholder="Enter your last name" focusBorderColor="orange.400" />
                 </FormControl>
               </SimpleGrid>
               
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
                 <FormControl isRequired>
                   <FormLabel>Business Email</FormLabel>
-                  <Input name="businessEmail" type="email" placeholder="Enter your business email" focusBorderColor="blue.400" />
+                  <Input name="businessEmail" type="email" placeholder="Enter your business email" focusBorderColor="orange.400" />
                 </FormControl>
                 
                 <FormControl isRequired>
                   <FormLabel>Phone Number</FormLabel>
-                  <Input name="phoneNumber" type="tel" placeholder="Enter your phone number" focusBorderColor="blue.400" />
+                  <Input name="phoneNumber" type="tel" placeholder="Enter your phone number" focusBorderColor="orange.400" />
                 </FormControl>
               </SimpleGrid>
               
               <FormControl isRequired>
                 <FormLabel>Company Name</FormLabel>
-                <Input name="companyName" type="text" placeholder="Enter your company name" focusBorderColor="blue.400" />
+                <Input name="companyName" type="text" placeholder="Enter your company name" focusBorderColor="orange.400" />
               </FormControl>
               
               <FormControl isRequired>
                 <FormLabel>Job Title</FormLabel>
-                <Input name="jobTitle" type="text" placeholder="Enter your job title" focusBorderColor="blue.400" />
+                <Input name="jobTitle" type="text" placeholder="Enter your job title" focusBorderColor="orange.400" />
               </FormControl>
               
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
@@ -190,7 +190,7 @@ function SalesContactPage() {
                     placeholder="Select business size" 
                     value={businessSize}
                     onChange={(e) => setBusinessSize(e.target.value)}
-                    focusBorderColor="blue.400"
+                    focusBorderColor="orange.400"
                   >
                     <option value="1-10">1-10 employees</option>
                     <option value="11-50">11-50 employees</option>
@@ -208,7 +208,7 @@ function SalesContactPage() {
                     placeholder="Select budget range" 
                     value={budgetRange}
                     onChange={(e) => setBudgetRange(e.target.value)}
-                    focusBorderColor="blue.400"
+                    focusBorderColor="orange.400"
                   >
                     <option value="under_1k">Under $1,000</option>
                     <option value="1k_5k">$1,000 - $5,000</option>
@@ -224,7 +224,7 @@ function SalesContactPage() {
                 <Select 
                   name="primaryInterest"
                   placeholder="Select your primary interest" 
-                  focusBorderColor="blue.400"
+                  focusBorderColor="orange.400"
                 >
                   <option value="web_scraping">Web Scraping Solutions</option>
                   <option value="proxy_services">Proxy Services</option>
@@ -240,7 +240,7 @@ function SalesContactPage() {
                 <Select 
                   name="projectTimeline"
                   placeholder="Select your timeline" 
-                  focusBorderColor="blue.400"
+                  focusBorderColor="orange.400"
                 >
                   <option value="immediate">Immediate (within days)</option>
                   <option value="1_month">Within 1 month</option>
@@ -256,7 +256,7 @@ function SalesContactPage() {
                   name="requirements"
                   placeholder="Please share details about your data collection needs, challenges, and goals"
                   rows={4}
-                  focusBorderColor="blue.400"
+                  focusBorderColor="orange.400"
                 />
               </FormControl>
               
@@ -265,7 +265,7 @@ function SalesContactPage() {
                 <Select 
                   name="contactPreference"
                   placeholder="Select contact preference" 
-                  focusBorderColor="blue.400"
+                  focusBorderColor="orange.400"
                 >
                   <option value="email">Email</option>
                   <option value="phone">Phone</option>
@@ -282,15 +282,15 @@ function SalesContactPage() {
                   onChange={(e) => setConsentChecked(e.target.checked)}
                 >
                   I agree to receive communications from The Data Proxy. I understand that my information will be processed in accordance with the 
-                  <Button as="a" href="/privacy" variant="link" color="blue.500" mx={1}>Privacy Policy</Button>.
+                  <Button as="a" href="/privacy" variant="link" color="orange.500" mx={1}>Privacy Policy</Button>.
                 </Checkbox>
               </FormControl>
               
               <Button 
                 type="submit" 
-                bg="blue.500"
+                bg="orange.500"
                 color="white"
-                _hover={{ bg: "blue.600" }}
+                _hover={{ bg: "orange.600" }}
                 size="lg" 
                 w={{ base: "full", md: "auto" }}
                 isLoading={isSubmitting}
@@ -310,9 +310,9 @@ function SalesContactPage() {
           </Heading>
 
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
-            <Box bg="blue.50" p={5} borderRadius="md">
+            <Box bg="orange.50" p={5} borderRadius="md">
               <Flex align="center" mb={3}>
-                <Icon as={CheckCircleIcon} color="blue.500" boxSize={5} mr={2} />
+                <Icon as={CheckCircleIcon} color="orange.500" boxSize={5} mr={2} />
                 <Text fontWeight="medium">Custom Solutions</Text>
               </Flex>
               <Text fontSize="sm" color="gray.600">
@@ -320,9 +320,9 @@ function SalesContactPage() {
               </Text>
             </Box>
             
-            <Box bg="blue.50" p={5} borderRadius="md">
+            <Box bg="orange.50" p={5} borderRadius="md">
               <Flex align="center" mb={3}>
-                <Icon as={CheckCircleIcon} color="blue.500" boxSize={5} mr={2} />
+                <Icon as={CheckCircleIcon} color="orange.500" boxSize={5} mr={2} />
                 <Text fontWeight="medium">Volume Pricing</Text>
               </Flex>
               <Text fontSize="sm" color="gray.600">
@@ -330,9 +330,9 @@ function SalesContactPage() {
               </Text>
             </Box>
             
-            <Box bg="blue.50" p={5} borderRadius="md">
+            <Box bg="orange.50" p={5} borderRadius="md">
               <Flex align="center" mb={3}>
-                <Icon as={CheckCircleIcon} color="blue.500" boxSize={5} mr={2} />
+                <Icon as={CheckCircleIcon} color="orange.500" boxSize={5} mr={2} />
                 <Text fontWeight="medium">Integration Support</Text>
               </Flex>
               <Text fontSize="sm" color="gray.600">
@@ -340,9 +340,9 @@ function SalesContactPage() {
               </Text>
             </Box>
             
-            <Box bg="blue.50" p={5} borderRadius="md">
+            <Box bg="orange.50" p={5} borderRadius="md">
               <Flex align="center" mb={3}>
-                <Icon as={CheckCircleIcon} color="blue.500" boxSize={5} mr={2} />
+                <Icon as={CheckCircleIcon} color="orange.500" boxSize={5} mr={2} />
                 <Text fontWeight="medium">Compliance Guidance</Text>
               </Flex>
               <Text fontSize="sm" color="gray.600">
@@ -358,13 +358,13 @@ function SalesContactPage() {
           {/* Quick Contact Info */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
             <Box 
-              bg="blue.50" 
+              bg="orange.50" 
               p={5} 
               borderRadius="md" 
               display="flex" 
               alignItems="center"
             >
-              <Icon as={PhoneIcon} color="blue.500" boxSize={5} mr={3} />
+              <Icon as={PhoneIcon} color="orange.500" boxSize={5} mr={3} />
               <Box>
                 <Text fontWeight="medium">Call Us Directly</Text>
                 <Text fontSize="sm" color="gray.600">
@@ -374,13 +374,13 @@ function SalesContactPage() {
             </Box>
             
             <Box 
-              bg="blue.50" 
+              bg="orange.50" 
               p={5} 
               borderRadius="md"
               display="flex" 
               alignItems="center"
             >
-              <Icon as={EmailIcon} color="blue.500" boxSize={5} mr={3} />
+              <Icon as={EmailIcon} color="orange.500" boxSize={5} mr={3} />
               <Box>
                 <Text fontWeight="medium">Email Sales</Text>
                 <Text fontSize="sm" color="gray.600">
