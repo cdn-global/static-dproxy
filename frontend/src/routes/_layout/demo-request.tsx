@@ -38,51 +38,54 @@ function RequestDemoPage() {
   const toast = useToast();
 
   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = {
-      first_name: e.target.firstName.value,
-      last_name: e.target.lastName.value,
-      business_email: e.target.businessEmail.value,
-      phone_number: e.target.phoneNumber.value,
-      company_name: e.target.companyName.value,
-      job_title: e.target.jobTitle.value,
-      primary_use_case: useCase,
-      other_use_case: useCase === 'other' ? e.target.otherUseCase?.value : null,
-      additional_requirements: e.target.additionalRequirements.value || null,
-      preferred_demo_datetime: e.target.preferredDemoDateTime.value || null
+    // Collect form data
+    const formData = new FormData(e.target);
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('businessEmail'),
+      phone: formData.get('phoneNumber'),
+      company: formData.get('companyName'),
+      jobTitle: formData.get('jobTitle'),
+      useCase: useCase,
+      otherUseCase: useCase === 'other' ? formData.get('otherUseCase') : null,
+      requirements: formData.get('requirements'),
+      demoDate: formData.get('demoDate'),
     };
 
     try {
-      // To this (with absolute URL):
-      const response = await fetch('https://apis.thedataproxy.com/api/v1/utils/demo-request/', {
+      // Send data to backend API
+      const response = await fetch('/api/demo-request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit demo request');
+      if (response.ok) {
+        setFormSubmitted(true);
+        window.scrollTo(0, 0);
+        toast({
+          title: 'Request Submitted',
+          description: 'We’ll contact you soon!',
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
+        throw new Error('Submission failed');
       }
-
-      const data = await response.json();
-      setFormSubmitted(true);
-      window.scrollTo(0, 0);
-      toast({
-        title: "Success",
-        description: data.message,
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast({
-        title: "Error",
-        description: error.message || "An error occurred while submitting your request",
-        status: "error",
+        title: 'Error',
+        description: 'Something went wrong. Please try again.',
+        status: 'error',
         duration: 5000,
         isClosable: true,
       });
@@ -130,123 +133,11 @@ function RequestDemoPage() {
             Request a Market Research Solution Demo
           </Heading>
           
-       
-          <Box w="full" as="form" onSubmit={handleSubmit} mt={6} bg="white" p={8} borderRadius="md" boxShadow="sm">
-            <VStack spacing={6} align="start">
-              <Heading as="h2" size="md" fontWeight="medium">
-                Your Information
-              </Heading>
-              
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
-                <FormControl isRequired>
-                  <FormLabel>First Name</FormLabel>
-                  <Input name="firstName" type="text" placeholder="Enter your first name" />
-                </FormControl>
-                
-                <FormControl isRequired>
-                  <FormLabel>Last Name</FormLabel>
-                  <Input name="lastName" type="text" placeholder="Enter your last name" />
-                </FormControl>
-              </SimpleGrid>
-              
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
-                <FormControl isRequired>
-                  <FormLabel>Business Email</FormLabel>
-                  <Input name="businessEmail" type="email" placeholder="Enter your business email" />
-                </FormControl>
-                
-                <FormControl isRequired>
-                  <FormLabel>Phone Number</FormLabel>
-                  <Input name="phoneNumber" type="tel" placeholder="Enter your phone number" />
-                </FormControl>
-              </SimpleGrid>
-              
-              <FormControl isRequired>
-                <FormLabel>Company Name</FormLabel>
-                <Input name="companyName" type="text" placeholder="Enter your company name" />
-              </FormControl>
-              
-              <FormControl isRequired>
-                <FormLabel>Job Title</FormLabel>
-                <Input name="jobTitle" type="text" placeholder="Enter your job title" />
-              </FormControl>
-              
-              <FormControl isRequired>
-                <FormLabel>Primary Use Case</FormLabel>
-                <Select 
-                  name="primaryUseCase"
-                  placeholder="Select primary use case" 
-                  value={useCase}
-                  onChange={(e) => setUseCase(e.target.value)}
-                >
-                  <option value="competitive_intelligence">Competitive Intelligence</option>
-                  <option value="market_analysis">Market Analysis & Trends</option>
-                  <option value="price_monitoring">Price Monitoring</option>
-                  <option value="sentiment_analysis">Consumer Sentiment Analysis</option>
-                  <option value="product_research">Product Research</option>
-                  <option value="lead_generation">Lead Generation</option>
-                  <option value="content_aggregation">Content Aggregation</option>
-                  <option value="other">Other (please specify)</option>
-                </Select>
-              </FormControl>
-              
-              {useCase === 'other' && (
-                <FormControl>
-                  <FormLabel>Please specify your use case</FormLabel>
-                  <Input name="otherUseCase" type="text" placeholder="Describe your use case" />
-                </FormControl>
-              )}
-              
-              <FormControl>
-                <FormLabel>Additional Requirements or Questions</FormLabel>
-                <Textarea 
-                  name="additionalRequirements"
-                  placeholder="Please share any specific requirements, questions, or areas of interest for the demo"
-                  rows={4}
-                />
-              </FormControl>
-              
-              <FormControl>
-                <FormLabel>Preferred Demo Date/Time</FormLabel>
-                <Input name="preferredDemoDateTime" type="datetime-local" />
-                <Text fontSize="sm" color="gray.500" mt={1}>
-                  We'll do our best to accommodate your preferred time or suggest alternatives.
-                </Text>
-              </FormControl>
-              
-              <FormControl isRequired mt={4}>
-                <Checkbox 
-                  size="md" 
-                  colorScheme="orange"
-                  isChecked={consentChecked}
-                  onChange={(e) => setConsentChecked(e.target.checked)}
-                >
-                  I agree to receive communications about The Data Proxy services. I understand that my information will be processed in accordance with the 
-                  <Button as="a" href="/privacy" variant="link" color="orange.500" mx={1}>Privacy Policy</Button>.
-                </Checkbox>
-              </FormControl>
-              
-              <Button 
-                type="submit" 
-                bg="orange.400"
-                color="white"
-                _hover={{ bg: "orange.500" }}
-                size="lg" 
-                w={{ base: "full", md: "auto" }}
-                isLoading={isSubmitting}
-                loadingText="Submitting"
-                isDisabled={!consentChecked}
-                mt={4}
-                rightIcon={<ArrowForwardIcon />}
-                >
-                  Submit 
-                </Button>
-              
-                            <Divider />
-              <Text fontSize="lg" color="gray.600">
+          <Text fontSize="lg" color="gray.600">
             Experience the power of our enterprise-grade web scraping proxy infrastructure. Complete this form to schedule a personalized demo tailored to your market research needs.
           </Text>
 
+          {/* Benefits */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
             <Box bg="orange.50" p={5} borderRadius="md">
               <Flex align="center" mb={3}>
@@ -289,6 +180,121 @@ function RequestDemoPage() {
             </Box>
           </SimpleGrid>
           
+          {/* Request Form */}
+          <Box w="full" as="form" onSubmit={handleSubmit} mt={6} bg="white" p={8} borderRadius="md" boxShadow="sm">
+            <VStack spacing={6} align="start">
+              <Heading as="h2" size="md" fontWeight="medium">
+                Your Information
+              </Heading>
+              
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
+                <FormControl isRequired>
+                  <FormLabel>First Name</FormLabel>
+                  <Input type="text" name="firstName" placeholder="Enter your first name" />
+                </FormControl>
+                
+                <FormControl isRequired>
+                  <FormLabel>Last Name</FormLabel>
+                  <Input type="text" name="lastName" placeholder="Enter your last name" />
+                </FormControl>
+              </SimpleGrid>
+              
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
+                <FormControl isRequired>
+                  <FormLabel>Business Email</FormLabel>
+                  <Input type="email" name="businessEmail" placeholder="Enter your business email" />
+                </FormControl>
+                
+                <FormControl isRequired>
+                  <FormLabel>Phone Number</FormLabel>
+                  <Input type="tel" name="phoneNumber" placeholder="Enter your phone number" />
+                </FormControl>
+              </SimpleGrid>
+              
+              <FormControl isRequired>
+                <FormLabel>Company Name</FormLabel>
+                <Input type="text" name="companyName" placeholder="Enter your company name" />
+              </FormControl>
+              
+              <FormControl isRequired>
+                <FormLabel>Job Title</FormLabel>
+                <Input type="text" name="jobTitle" placeholder="Enter your job title" />
+              </FormControl>
+              
+              <FormControl isRequired>
+                <FormLabel>Primary Use Case</FormLabel>
+                <Select 
+                  name="useCase"
+                  placeholder="Select primary use case" 
+                  value={useCase}
+                  onChange={(e) => setUseCase(e.target.value)}
+                >
+                  <option value="competitive_intelligence">Competitive Intelligence</option>
+                  <option value="market_analysis">Market Analysis & Trends</option>
+                  <option value="price_monitoring">Price Monitoring</option>
+                  <option value="sentiment_analysis">Consumer Sentiment Analysis</option>
+                  <option value="product_research">Product Research</option>
+                  <option value="lead_generation">Lead Generation</option>
+                  <option value="content_aggregation">Content Aggregation</option>
+                  <option value="other">Other (please specify)</option>
+                </Select>
+              </FormControl>
+              
+              {useCase === 'other' && (
+                <FormControl>
+                  <FormLabel>Please specify your use case</FormLabel>
+                  <Input type="text" name="otherUseCase" placeholder="Describe your use case" />
+                </FormControl>
+              )}
+              
+              <FormControl>
+                <FormLabel>Additional Requirements or Questions</FormLabel>
+                <Textarea 
+                  name="requirements"
+                  placeholder="Please share any specific requirements, questions, or areas of interest for the demo"
+                  rows={4}
+                />
+              </FormControl>
+              
+              <FormControl>
+                <FormLabel>Preferred Demo Date/Time</FormLabel>
+                <Input type="datetime-local" name="demoDate" />
+                <Text fontSize="sm" color="gray.500" mt={1}>
+                  We'll do our best to accommodate your preferred time or suggest alternatives.
+                </Text>
+              </FormControl>
+              
+              <FormControl isRequired mt={4}>
+                <Checkbox 
+                  size="md" 
+                  colorScheme="orange"
+                  isChecked={consentChecked}
+                  onChange={(e) => setConsentChecked(e.target.checked)}
+                >
+                  I agree to receive communications about The Data Proxy services. I understand that my information will be processed in accordance with the 
+                  <Button as="a" href="/privacy" variant="link" color="orange.500" mx={1}>Privacy Policy</Button>.
+                </Checkbox>
+              </FormControl>
+              
+              <Button 
+                type="submit" 
+                bg="orange.400"
+                color="white"
+                _hover={{ bg: "orange.500" }}
+                size="lg" 
+                w={{ base: "full", md: "auto" }}
+                isLoading={isSubmitting}
+                loadingText="Submitting"
+                isDisabled={!consentChecked}
+                mt={4}
+              >
+                Request Demo
+              </Button>
+              
+              <Text fontSize="sm" color="gray.500" mt={2}>
+                <Icon as={InfoIcon} mr={1} />
+                Our team typically responds within 24 business hours.
+              </Text>
             </VStack>
           </Box>
         </VStack>

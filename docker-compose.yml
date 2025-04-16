@@ -52,7 +52,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    restart: "no"  # Run only once
+    restart: "no"
     command: bash scripts/prestart.sh
     env_file:
       - .env
@@ -87,7 +87,7 @@ services:
       prestart:
         condition: service_completed_successfully
     env_file:
-      - .env      
+      - .env
     ports:
       - "8000:8000"
     environment:
@@ -117,11 +117,15 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik-public"
-      - "traefik.constraint-label=traefik-public"     
-      # ✅ API HTTP Router (Fix for api.thedataproxy.com)
-      - "traefik.http.routers.api-http.rule=Host(`apis.thedataproxy.com`)"
+      - "traefik.constraint-label=traefik-public"
+      # Updated API HTTP Router to use /api path prefix
+      - "traefik.http.routers.api-http.rule=Host(`thedataproxy.com`) && PathPrefix(`/api`)"
       - "traefik.http.routers.api-http.entrypoints=http"
       - "traefik.http.services.api-service.loadbalancer.server.port=8000"
+      # Optional: Strip the /api prefix when forwarding to the backend
+      - "traefik.http.routers.api-http.middlewares=api-stripprefix"
+      - "traefik.http.middlewares.api-stripprefix.stripprefix.prefixes=/api"
+
   frontend:
     image: "${DOCKER_IMAGE_FRONTEND?Variable not set}:${TAG-latest}"
     restart: always
@@ -140,7 +144,7 @@ services:
       - traefik.enable=true
       - traefik.docker.network=traefik-public
       - traefik.constraint-label=traefik-public
-      - traefik.http.routers.dashboard.rule=Host(`thedataproxy.com`) || Host(`www.thedataproxy.com`)
+      - traefik.http.routers.dashboard.rule=Host(`thedataproxy.com`)
       - traefik.http.routers.dashboard.entrypoints=http
       - traefik.http.services.dashboard.loadbalancer.server.port=80
 
