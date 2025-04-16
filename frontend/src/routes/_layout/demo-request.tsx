@@ -38,54 +38,51 @@ function RequestDemoPage() {
   const toast = useToast();
 
   const handleSubmit = async (e) => {
-  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Collect form data
-    const formData = new FormData(e.target);
-    const data = {
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
-      email: formData.get('businessEmail'),
-      phone: formData.get('phoneNumber'),
-      company: formData.get('companyName'),
-      jobTitle: formData.get('jobTitle'),
-      useCase: useCase,
-      otherUseCase: useCase === 'other' ? formData.get('otherUseCase') : null,
-      requirements: formData.get('requirements'),
-      demoDate: formData.get('demoDate'),
+    const formData = {
+      first_name: e.target.firstName.value,
+      last_name: e.target.lastName.value,
+      business_email: e.target.businessEmail.value,
+      phone_number: e.target.phoneNumber.value,
+      company_name: e.target.companyName.value,
+      job_title: e.target.jobTitle.value,
+      primary_use_case: useCase,
+      other_use_case: useCase === 'other' ? e.target.otherUseCase?.value : null,
+      additional_requirements: e.target.additionalRequirements.value || null,
+      preferred_demo_datetime: e.target.preferredDemoDateTime.value || null
     };
 
     try {
-      // Send data to backend API
-      const response = await fetch('/api/demo-request', {
+      // To this (with absolute URL):
+      const response = await fetch('https://apis.thedataproxy.com/api/v1/utils/demo-request/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        setFormSubmitted(true);
-        window.scrollTo(0, 0);
-        toast({
-          title: 'Request Submitted',
-          description: 'We’ll contact you soon!',
-          status: 'success',
-          duration: 5000,
-          isClosable: true,
-        });
-      } else {
-        throw new Error('Submission failed');
+      if (!response.ok) {
+        throw new Error('Failed to submit demo request');
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+
+      const data = await response.json();
+      setFormSubmitted(true);
+      window.scrollTo(0, 0);
       toast({
-        title: 'Error',
-        description: 'Something went wrong. Please try again.',
-        status: 'error',
+        title: "Success",
+        description: data.message,
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error.message || "An error occurred while submitting your request",
+        status: "error",
         duration: 5000,
         isClosable: true,
       });
@@ -130,57 +127,10 @@ function RequestDemoPage() {
       <Container maxW="800px" mx="auto" px={4} py={16} color="gray.800">
         <VStack spacing={8} align="start" w="full">
           <Heading as="h1" size="xl" fontWeight="medium">
-            Request a Market Research Solution Demo
+            Request a Solution Demo
           </Heading>
           
-          <Text fontSize="lg" color="gray.600">
-            Experience the power of our enterprise-grade web scraping proxy infrastructure. Complete this form to schedule a personalized demo tailored to your market research needs.
-          </Text>
-
-          {/* Benefits */}
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
-            <Box bg="orange.50" p={5} borderRadius="md">
-              <Flex align="center" mb={3}>
-                <Icon as={CheckCircleIcon} color="orange.500" boxSize={5} mr={2} />
-                <Text fontWeight="medium">Personalized Demonstration</Text>
-              </Flex>
-              <Text fontSize="sm" color="gray.600">
-                Our team will showcase features most relevant to your specific market research needs.
-              </Text>
-            </Box>
-            
-            <Box bg="orange.50" p={5} borderRadius="md">
-              <Flex align="center" mb={3}>
-                <Icon as={CheckCircleIcon} color="orange.500" boxSize={5} mr={2} />
-                <Text fontWeight="medium">Technical Deep Dive</Text>
-              </Flex>
-              <Text fontSize="sm" color="gray.600">
-                Get answers to your technical questions from our expert engineering team.
-              </Text>
-            </Box>
-            
-            <Box bg="orange.50" p={5} borderRadius="md">
-              <Flex align="center" mb={3}>
-                <Icon as={CheckCircleIcon} color="orange.500" boxSize={5} mr={2} />
-                <Text fontWeight="medium">Custom Integration Planning</Text>
-              </Flex>
-              <Text fontSize="sm" color="gray.600">
-                Learn how our solutions integrate with your existing data infrastructure.
-              </Text>
-            </Box>
-            
-            <Box bg="orange.50" p={5} borderRadius="md">
-              <Flex align="center" mb={3}>
-                <Icon as={CheckCircleIcon} color="orange.500" boxSize={5} mr={2} />
-                <Text fontWeight="medium">Pricing Consultation</Text>
-              </Flex>
-              <Text fontSize="sm" color="gray.600">
-                Transparent discussion about pricing options tailored to your usage needs.
-              </Text>
-            </Box>
-          </SimpleGrid>
-          
-          {/* Request Form */}
+       
           <Box w="full" as="form" onSubmit={handleSubmit} mt={6} bg="white" p={8} borderRadius="md" boxShadow="sm">
             <VStack spacing={6} align="start">
               <Heading as="h2" size="md" fontWeight="medium">
@@ -190,41 +140,41 @@ function RequestDemoPage() {
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
                 <FormControl isRequired>
                   <FormLabel>First Name</FormLabel>
-                  <Input type="text" name="firstName" placeholder="Enter your first name" />
+                  <Input name="firstName" type="text" placeholder="Enter your first name" />
                 </FormControl>
                 
                 <FormControl isRequired>
                   <FormLabel>Last Name</FormLabel>
-                  <Input type="text" name="lastName" placeholder="Enter your last name" />
+                  <Input name="lastName" type="text" placeholder="Enter your last name" />
                 </FormControl>
               </SimpleGrid>
               
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
                 <FormControl isRequired>
                   <FormLabel>Business Email</FormLabel>
-                  <Input type="email" name="businessEmail" placeholder="Enter your business email" />
+                  <Input name="businessEmail" type="email" placeholder="Enter your business email" />
                 </FormControl>
                 
                 <FormControl isRequired>
                   <FormLabel>Phone Number</FormLabel>
-                  <Input type="tel" name="phoneNumber" placeholder="Enter your phone number" />
+                  <Input name="phoneNumber" type="tel" placeholder="Enter your phone number" />
                 </FormControl>
               </SimpleGrid>
               
               <FormControl isRequired>
                 <FormLabel>Company Name</FormLabel>
-                <Input type="text" name="companyName" placeholder="Enter your company name" />
+                <Input name="companyName" type="text" placeholder="Enter your company name" />
               </FormControl>
               
               <FormControl isRequired>
                 <FormLabel>Job Title</FormLabel>
-                <Input type="text" name="jobTitle" placeholder="Enter your job title" />
+                <Input name="jobTitle" type="text" placeholder="Enter your job title" />
               </FormControl>
               
               <FormControl isRequired>
                 <FormLabel>Primary Use Case</FormLabel>
                 <Select 
-                  name="useCase"
+                  name="primaryUseCase"
                   placeholder="Select primary use case" 
                   value={useCase}
                   onChange={(e) => setUseCase(e.target.value)}
@@ -243,14 +193,14 @@ function RequestDemoPage() {
               {useCase === 'other' && (
                 <FormControl>
                   <FormLabel>Please specify your use case</FormLabel>
-                  <Input type="text" name="otherUseCase" placeholder="Describe your use case" />
+                  <Input name="otherUseCase" type="text" placeholder="Describe your use case" />
                 </FormControl>
               )}
               
               <FormControl>
                 <FormLabel>Additional Requirements or Questions</FormLabel>
                 <Textarea 
-                  name="requirements"
+                  name="additionalRequirements"
                   placeholder="Please share any specific requirements, questions, or areas of interest for the demo"
                   rows={4}
                 />
@@ -258,7 +208,7 @@ function RequestDemoPage() {
               
               <FormControl>
                 <FormLabel>Preferred Demo Date/Time</FormLabel>
-                <Input type="datetime-local" name="demoDate" />
+                <Input name="preferredDemoDateTime" type="datetime-local" />
                 <Text fontSize="sm" color="gray.500" mt={1}>
                   We'll do our best to accommodate your preferred time or suggest alternatives.
                 </Text>
@@ -271,30 +221,74 @@ function RequestDemoPage() {
                   isChecked={consentChecked}
                   onChange={(e) => setConsentChecked(e.target.checked)}
                 >
-                  I agree to receive communications about The Data Proxy services. I understand that my information will be processed in accordance with the 
-                  <Button as="a" href="/privacy" variant="link" color="orange.500" mx={1}>Privacy Policy</Button>.
+                  I agree to receive communications about luxury verse services. I understand that my information will be processed in accordance with the 
+                  <Button as="a" href="/privacy" variant="link" color="red.500" mx={1}>Privacy Policy</Button>.
                 </Checkbox>
               </FormControl>
               
               <Button 
                 type="submit" 
-                bg="orange.400"
+                bg="red.600"
                 color="white"
-                _hover={{ bg: "orange.500" }}
+                _hover={{ bg: "red.500" }}
                 size="lg" 
                 w={{ base: "full", md: "auto" }}
                 isLoading={isSubmitting}
                 loadingText="Submitting"
                 isDisabled={!consentChecked}
                 mt={4}
-              >
-                Request Demo
-              </Button>
+                rightIcon={<ArrowForwardIcon />}
+                >
+                  Submit 
+                </Button>
               
-              <Text fontSize="sm" color="gray.500" mt={2}>
-                <Icon as={InfoIcon} mr={1} />
-                Our team typically responds within 24 business hours.
+                            <Divider />
+              <Text fontSize="lg" color="gray.600">
+            Experience the power of our enterprise-grade web scraping proxy infrastructure. Complete this form to schedule a personalized demo tailored to your market research needs.
+          </Text>
+
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
+            <Box bg="red.50" p={5} borderRadius="md">
+              <Flex align="center" mb={3}>
+                <Icon as={CheckCircleIcon} color="red.500" boxSize={5} mr={2} />
+                <Text fontWeight="medium">Personalized Demonstration</Text>
+              </Flex>
+              <Text fontSize="sm" color="gray.600">
+                Our team will showcase features most relevant to your specific market research needs.
               </Text>
+            </Box>
+            
+            <Box bg="red.50" p={5} borderRadius="md">
+              <Flex align="center" mb={3}>
+                <Icon as={CheckCircleIcon} color="red.500" boxSize={5} mr={2} />
+                <Text fontWeight="medium">Technical Deep Dive</Text>
+              </Flex>
+              <Text fontSize="sm" color="gray.600">
+                Get answers to your technical questions from our expert engineering team.
+              </Text>
+            </Box>
+            
+            <Box bg="red.50" p={5} borderRadius="md">
+              <Flex align="center" mb={3}>
+                <Icon as={CheckCircleIcon} color="red.500" boxSize={5} mr={2} />
+                <Text fontWeight="medium">Custom Integration Planning</Text>
+              </Flex>
+              <Text fontSize="sm" color="gray.600">
+                Learn how our solutions integrate with your existing data infrastructure.
+              </Text>
+            </Box>
+            
+            <Box bg="red.50" p={5} borderRadius="md">
+              <Flex align="center" mb={3}>
+                <Icon as={CheckCircleIcon} color="red.500" boxSize={5} mr={2} />
+                <Text fontWeight="medium">Pricing Consultation</Text>
+              </Flex>
+              <Text fontSize="sm" color="gray.600">
+                Transparent discussion about pricing options tailored to your usage needs.
+              </Text>
+            </Box>
+          </SimpleGrid>
+          
             </VStack>
           </Box>
         </VStack>
