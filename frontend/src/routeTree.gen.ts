@@ -18,6 +18,7 @@ import { Route as LayoutReportImport } from './routes/_layout/report'
 import { Route as LayoutPrivacyRequestImport } from './routes/_layout/privacy-request'
 import { Route as LayoutPrivacyImport } from './routes/_layout/privacy'
 import { Route as LayoutPricingImport } from './routes/_layout/pricing'
+import { Route as LayoutDoNotSellImport } from './routes/_layout/do-not-sell'
 import { Route as LayoutDemoRequestImport } from './routes/_layout/demo-request'
 import { Route as LayoutCookieImport } from './routes/_layout/cookie'
 import { Route as LayoutContactSalesImport } from './routes/_layout/contact-sales'
@@ -103,6 +104,12 @@ const LayoutPrivacyRoute = LayoutPrivacyImport.update({
 const LayoutPricingRoute = LayoutPricingImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => LayoutRoute,
+} as any)
+
+const LayoutDoNotSellRoute = LayoutDoNotSellImport.update({
+  id: '/do-not-sell',
+  path: '/do-not-sell',
   getParentRoute: () => LayoutRoute,
 } as any)
 
@@ -433,6 +440,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutDemoRequestImport
       parentRoute: typeof LayoutImport
     }
+    '/_layout/do-not-sell': {
+      id: '/_layout/do-not-sell'
+      path: '/do-not-sell'
+      fullPath: '/do-not-sell'
+      preLoaderRoute: typeof LayoutDoNotSellImport
+      parentRoute: typeof LayoutImport
+    }
     '/_layout/pricing': {
       id: '/_layout/pricing'
       path: '/pricing'
@@ -759,6 +773,7 @@ interface LayoutRouteChildren {
   LayoutContactSalesRoute: typeof LayoutContactSalesRoute
   LayoutCookieRoute: typeof LayoutCookieRoute
   LayoutDemoRequestRoute: typeof LayoutDemoRequestRoute
+  LayoutDoNotSellRoute: typeof LayoutDoNotSellRoute
   LayoutPricingRoute: typeof LayoutPricingRoute
   LayoutPrivacyRoute: typeof LayoutPrivacyRoute
   LayoutPrivacyRequestRoute: typeof LayoutPrivacyRequestRoute
@@ -812,6 +827,7 @@ const LayoutRouteChildren: LayoutRouteChildren = {
   LayoutContactSalesRoute: LayoutContactSalesRoute,
   LayoutCookieRoute: LayoutCookieRoute,
   LayoutDemoRequestRoute: LayoutDemoRequestRoute,
+  LayoutDoNotSellRoute: LayoutDoNotSellRoute,
   LayoutPricingRoute: LayoutPricingRoute,
   LayoutPrivacyRoute: LayoutPrivacyRoute,
   LayoutPrivacyRequestRoute: LayoutPrivacyRequestRoute,
@@ -876,6 +892,7 @@ export interface FileRoutesByFullPath {
   '/contact-sales': typeof LayoutContactSalesRoute
   '/cookie': typeof LayoutCookieRoute
   '/demo-request': typeof LayoutDemoRequestRoute
+  '/do-not-sell': typeof LayoutDoNotSellRoute
   '/pricing': typeof LayoutPricingRoute
   '/privacy': typeof LayoutPrivacyRoute
   '/privacy-request': typeof LayoutPrivacyRequestRoute
@@ -929,6 +946,7 @@ export interface FileRoutesByTo {
   '/contact-sales': typeof LayoutContactSalesRoute
   '/cookie': typeof LayoutCookieRoute
   '/demo-request': typeof LayoutDemoRequestRoute
+  '/do-not-sell': typeof LayoutDoNotSellRoute
   '/pricing': typeof LayoutPricingRoute
   '/privacy': typeof LayoutPrivacyRoute
   '/privacy-request': typeof LayoutPrivacyRequestRoute
@@ -984,6 +1002,7 @@ export interface FileRoutesById {
   '/_layout/contact-sales': typeof LayoutContactSalesRoute
   '/_layout/cookie': typeof LayoutCookieRoute
   '/_layout/demo-request': typeof LayoutDemoRequestRoute
+  '/_layout/do-not-sell': typeof LayoutDoNotSellRoute
   '/_layout/pricing': typeof LayoutPricingRoute
   '/_layout/privacy': typeof LayoutPrivacyRoute
   '/_layout/privacy-request': typeof LayoutPrivacyRequestRoute
@@ -1040,6 +1059,7 @@ export interface FileRouteTypes {
     | '/contact-sales'
     | '/cookie'
     | '/demo-request'
+    | '/do-not-sell'
     | '/pricing'
     | '/privacy'
     | '/privacy-request'
@@ -1092,6 +1112,7 @@ export interface FileRouteTypes {
     | '/contact-sales'
     | '/cookie'
     | '/demo-request'
+    | '/do-not-sell'
     | '/pricing'
     | '/privacy'
     | '/privacy-request'
@@ -1145,6 +1166,7 @@ export interface FileRouteTypes {
     | '/_layout/contact-sales'
     | '/_layout/cookie'
     | '/_layout/demo-request'
+    | '/_layout/do-not-sell'
     | '/_layout/pricing'
     | '/_layout/privacy'
     | '/_layout/privacy-request'
@@ -1222,6 +1244,7 @@ export const routeTree = rootRoute
         "/_layout/contact-sales",
         "/_layout/cookie",
         "/_layout/demo-request",
+        "/_layout/do-not-sell",
         "/_layout/pricing",
         "/_layout/privacy",
         "/_layout/privacy-request",
@@ -1287,6 +1310,10 @@ export const routeTree = rootRoute
     },
     "/_layout/demo-request": {
       "filePath": "_layout/demo-request.tsx",
+      "parent": "/_layout"
+    },
+    "/_layout/do-not-sell": {
+      "filePath": "_layout/do-not-sell.tsx",
       "parent": "/_layout"
     },
     "/_layout/pricing": {
