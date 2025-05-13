@@ -183,15 +183,15 @@ function PricingPage() {
       {/* Pricing Hero Section */}
       <Box py={16} bg="orange.50" color="gray.800">
         <Box maxW="1200px" mx="auto" px={4}>
-          <Heading as="h1" size="2xl" textAlign="center" mb={8} fontWeight="medium">
-            Pricing That Scales With You
+          <Heading as="h1" size="3xl" textAlign="center" mb={6} fontWeight="bold">
+            Pricing That Powers Your Data
           </Heading>
-          <Text fontSize="xl" textAlign="center" mb={8} maxW="800px" mx="auto">
-            From small experiments to enterprise solutions, find a plan that powers your data journey.
+          <Text fontSize="xl" textAlign="center" mb={6} maxW="800px" mx="auto">
+            Unlock scalable plans designed for your data-driven success.
           </Text>
-          <Box maxW="300px" mx="auto" mb={10}>
+          <Box maxW="300px" mx="auto">
             <FormControl display="flex" alignItems="center" justifyContent="center">
-              <FormLabel htmlFor="billing-toggle" mb="0" mr={2}>
+              <FormLabel htmlFor="billing-toggle" mb="0" mr={2} fontWeight="bold">
                 Monthly
               </FormLabel>
               <Switch
@@ -201,9 +201,9 @@ function PricingPage() {
                 isChecked={isAnnual}
                 onChange={() => setIsAnnual(!isAnnual)}
               />
-              <FormLabel htmlFor="billing-toggle" mb="0" ml={2}>
+              <FormLabel htmlFor="billing-toggle" mb="0" ml={2} fontWeight="bold">
                 Annual
-                <Badge ml={2} colorScheme="green" fontSize="0.8em">Save 20%</Badge>
+                <Badge ml={2} colorScheme="green" fontSize="0.9em">Save 20%</Badge>
               </FormLabel>
             </FormControl>
           </Box>
@@ -211,18 +211,19 @@ function PricingPage() {
       </Box>
 
       {/* Pricing Plans Section */}
-      <Box py={16} bg="white">
+      <Box py={12} bg="white">
         <Box maxW="1200px" mx="auto" px={4}>
-          <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap={8}>
+          <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} gap={6}>
             {pricingPlans.map((plan, index) => (
               <Box
                 key={index}
                 borderWidth="1px"
-                borderRadius="lg"
+                borderRadius="xl"
                 overflow="hidden"
-                boxShadow={plan.popular ? "lg" : "md"}
-                bg={plan.popular ? "orange.50" : "white"}
+                boxShadow={plan.popular ? "xl" : "lg"}
+                bg={plan.popular ? "orange.50" : "gray.50"}
                 position="relative"
+                _hover={{ transform: "translateY(-4px)", transition: "all 0.2s" }}
               >
                 {plan.popular && (
                   <Badge
@@ -231,68 +232,75 @@ function PricingPage() {
                     right={4}
                     colorScheme="orange"
                     variant="solid"
-                    px={2}
+                    px={3}
                     py={1}
                     borderRadius="md"
+                    fontSize="sm"
                   >
                     Most Popular
                   </Badge>
                 )}
-                <Box p={6}>
-                  <Heading as="h3" size="lg" mb={2}>
+                <Box p={8}>
+                  <Heading as="h3" size="xl" mb={3} fontWeight="bold">
                     {plan.name}
                   </Heading>
-                  <Text color="gray.600" h="60px" mb={4}>
+                  <Text color="gray.600" h="60px" mb={4} fontSize="sm">
                     {plan.description}
                   </Text>
                   {plan.customPricing ? (
-                    <Box my={6}>
-                      <Text fontSize="3xl" fontWeight="bold" mb={1}>
-                        Custom Pricing
+                    <Box my={4}>
+                      <Text fontSize="4xl" fontWeight="extrabold" color="orange.600">
+                        Custom
                       </Text>
-                      <Text color="gray.600">
+                      <Text color="gray.600" fontSize="md">
                         Tailored to your needs
                       </Text>
                     </Box>
                   ) : (
-                    <Box my={6}>
-                      <Text fontSize="3xl" fontWeight="bold" mb={1}>
-                        ${isAnnual ? plan.annualPrice : plan.monthlyPrice}
-                      </Text>
-                      <Text color="gray.600">
-                        per month {isAnnual && "(billed annually)"}
+                    <Box my={4}>
+                      <Flex align="baseline">
+                        <Text fontSize="5xl" fontWeight="extrabold" color="orange.600">
+                          ${isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                        </Text>
+                        <Text color="gray.600" ml={2} fontSize="lg">
+                          /mo
+                        </Text>
+                      </Flex>
+                      <Text color="gray.600" fontSize="sm">
+                        {isAnnual && "billed annually"}
                       </Text>
                     </Box>
                   )}
-<Button
-  colorScheme={plan.popular ? "orange" : "gray"}
-  variant={plan.popular ? "solid" : "outline"}
-  size="lg"
-  width="full"
-  mb={6}
-  as="a"
-  href={plan.customPricing ? "/contact-sales" : isAnnual ? plan.annualHref : plan.monthlyHref}
->
-  {plan.customPricing ? "Contact Sales" : "Select Plan"}
-</Button>
+                  <Button
+                    colorScheme={plan.popular ? "orange" : "orange"}
+                    variant={plan.popular ? "solid" : "outline"}
+                    size="lg"
+                    width="full"
+                    mb={6}
+                    as="a"
+                    href={plan.customPricing ? "/contact-sales" : isAnnual ? plan.annualHref : plan.monthlyHref}
+                    _hover={{ bg: plan.popular ? "orange.600" : "orange.100" }}
+                  >
+                    {plan.customPricing ? "Contact Sales" : "Get Started Now"}
+                  </Button>
                   <Divider mb={4} />
-                  <Text fontWeight="medium" mb={3}>Features:</Text>
+                  <Text fontWeight="bold" mb={3}>What's Included:</Text>
                   <List spacing={2} mb={6}>
                     {plan.features.map((feature, featureIndex) => (
                       <ListItem key={featureIndex} display="flex">
                         <ListIcon as={CheckCircleIcon} color="green.500" mt={1} />
-                        <Text>{feature}</Text>
+                        <Text fontSize="sm">{feature}</Text>
                       </ListItem>
                     ))}
                   </List>
                   {plan.limitations.length > 0 && (
                     <>
-                      <Text fontWeight="medium" mb={3}>Limitations:</Text>
+                      <Text fontWeight="bold" mb={3}>Limitations:</Text>
                       <List spacing={2}>
                         {plan.limitations.map((limitation, limitationIndex) => (
                           <ListItem key={limitationIndex} display="flex" color="gray.600">
                             <ListIcon as={CloseIcon} color="red.500" mt={1} fontSize="xs" />
-                            <Text>{limitation}</Text>
+                            <Text fontSize="sm">{limitation}</Text>
                           </ListItem>
                         ))}
                       </List>
@@ -306,30 +314,30 @@ function PricingPage() {
       </Box>
 
       {/* Feature Comparison Table */}
-      <Box py={16} bg="gray.50">
+      <Box py={12} bg="gray.50">
         <Box maxW="1200px" mx="auto" px={4}>
-          <Heading as="h2" size="xl" textAlign="center" mb={8} fontWeight="medium">
+          <Heading as="h2" size="2xl" textAlign="center" mb={6} fontWeight="bold">
             Compare Plans
           </Heading>
-          <Text fontSize="lg" textAlign="center" mb={12} maxW="700px" mx="auto">
-            See how our plans stack up to match your data needs.
+          <Text fontSize="lg" textAlign="center" mb={10} maxW="700px" mx="auto">
+            Find the perfect plan for your data needs.
           </Text>
           <Box overflowX="auto">
-            <Table variant="simple" bg="white" boxShadow="md" borderRadius="md">
+            <Table variant="simple" bg="white" boxShadow="lg" borderRadius="xl">
               <Thead>
                 <Tr bg="gray.100">
-                  <Th width="30%">Feature</Th>
-                  <Th width="17.5%">Starter</Th>
-                  <Th width="17.5%" bg="orange.50">Analyst</Th>
-                  <Th width="17.5%">Business</Th>
-                  <Th width="17.5%">Enterprise</Th>
+                  <Th width="30%" fontSize="md">Feature</Th>
+                  <Th width="17.5%" fontSize="md">Starter</Th>
+                  <Th width="17.5%" bg="orange.50" fontSize="md">Analyst</Th>
+                  <Th width="17.5%" fontSize="md">Business</Th>
+                  <Th width="17.5%" fontSize="md">Enterprise</Th>
                 </Tr>
               </Thead>
               <Tbody>
                 {featureComparison.map((category, categoryIndex) => (
                   <>
                     <Tr key={`category-${categoryIndex}`} bg="gray.50">
-                      <Td colSpan={5} fontWeight="bold" fontSize="md">
+                      <Td colSpan={5} fontWeight="bold" fontSize="lg" py={3}>
                         {category.category}
                       </Td>
                     </Tr>
@@ -367,18 +375,18 @@ function PricingPage() {
       </Box>
 
       {/* FAQ Section */}
-      <Box py={16} bg="white">
+      <Box py={12} bg="white">
         <Box maxW="900px" mx="auto" px={4}>
-          <Heading as="h2" size="xl" textAlign="center" mb={8} fontWeight="medium">
+          <Heading as="h2" size="2xl" textAlign="center" mb={6} fontWeight="bold">
             Got Questions?
           </Heading>
-          <Box borderRadius="md" boxShadow="sm" overflow="hidden">
+          <Box borderRadius="xl" boxShadow="lg" overflow="hidden">
             <Accordion allowToggle>
               {faqItems.map((faq, index) => (
                 <AccordionItem key={index} borderColor="gray.200">
                   <h3>
                     <AccordionButton py={4} px={6} _expanded={{ bg: "orange.50", color: "orange.600" }}>
-                      <Box flex="1" textAlign="left" fontWeight="medium" fontSize="md">
+                      <Box flex="1" textAlign="left" fontWeight="bold" fontSize="lg">
                         {faq.question}
                       </Box>
                       <AccordionIcon />
@@ -395,48 +403,48 @@ function PricingPage() {
       </Box>
 
       {/* Usage Statistics Section */}
-      <Box py={16} bg="orange.50">
+      <Box py={12} bg="orange.50">
         <Box maxW="1200px" mx="auto" px={4}>
-          <Heading as="h2" size="xl" textAlign="center" mb={8} fontWeight="medium">
+          <Heading as="h2" size="2xl" textAlign="center" mb={6} fontWeight="bold">
             Data Powerhouse
           </Heading>
-          <Text fontSize="lg" textAlign="center" mb={10} maxW="700px" mx="auto">
+          <Text fontSize="lg" textAlign="center" mb={8} maxW="700px" mx="auto">
             Trusted by thousands to deliver reliable, scalable data solutions.
           </Text>
-          <SimpleGrid columns={{ base: 2, md: 4 }} spacing={10}>
+          <SimpleGrid columns={{ base: 2, md: 4 }} spacing={8}>
             <VStack>
-              <Heading as="h3" size="2xl" color="orange.600">99.9%</Heading>
-              <Text fontWeight="medium">Uptime Reliability</Text>
+              <Heading as="h3" size="3xl" color="orange.600">99.9%</Heading>
+              <Text fontWeight="bold">Uptime Reliability</Text>
               <Text fontSize="sm" color="gray.600">Built for the enterprise</Text>
             </VStack>
             <VStack>
-              <Heading as="h3" size="2xl" color="orange.600">5B+</Heading>
-              <Text fontWeight="medium">Monthly Requests</Text>
+              <Heading as="h3" size="3xl" color="orange.600">5B+</Heading>
+              <Text fontWeight="bold">Monthly Requests</Text>
               <Text fontSize="sm" color="gray.600">Across our network</Text>
             </VStack>
             <VStack>
-              <Heading as="h3" size="2xl" color="orange.600">50K+</Heading>
-              <Text fontWeight="medium">IP Pool</Text>
+              <Heading as="h3" size="3xl" color="orange.600">50K+</Heading>
+              <Text fontWeight="bold">IP Pool</Text>
               <Text fontSize="sm" color="gray.600">From solo to scale</Text>
             </VStack>
             <VStack>
-              <Heading as="h3" size="2xl" color="orange.600">190+</Heading>
-              <Text fontWeight="medium">Countries Covered</Text>
+              <Heading as="h3" size="3xl" color="orange.600">190+</Heading>
+              <Text fontWeight="bold">Countries Covered</Text>
               <Text fontSize="sm" color="gray.600">Global reach</Text>
             </VStack>
           </SimpleGrid>
-          <Box mt={16} p={8} bg="white" borderRadius="lg" boxShadow="md">
+          <Box mt={12} p={8} bg="white" borderRadius="xl" boxShadow="lg">
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
               <VStack align="flex-start">
-                <Heading as="h3" size="md" color="orange.600" mb={2}>Top-Tier Security</Heading>
+                <Heading as="h3" size="lg" color="orange.600" mb={2}>Top-Tier Security</Heading>
                 <Text>SOC 2 compliant, fully encrypted, and audited regularly.</Text>
               </VStack>
               <VStack align="flex-start">
-                <Heading as="h3" size="md" color="orange.600" mb={2}>Scales With You</Heading>
+                <Heading as="h3" size="lg" color="orange.600" mb={2}>Scales With You</Heading>
                 <Text>Handles peak demand without breaking a sweat.</Text>
               </VStack>
               <VStack align="flex-start">
-                <Heading as="h3" size="md" color="orange.600" mb={2}>Dev-Ready</Heading>
+                <Heading as="h3" size="lg" color="orange.600" mb={2}>Dev-Ready</Heading>
                 <Text>APIs, SDKs, and examples to get you started fast.</Text>
               </VStack>
             </SimpleGrid>
@@ -445,23 +453,23 @@ function PricingPage() {
       </Box>
 
       {/* Call to Action */}
-      <Box py={16} bg="orange.600" color="white">
+      <Box py={12} bg="orange.600" color="white">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
-          <Heading as="h2" size="xl" mb={6} fontWeight="medium" color="white">
-            Start Collecting Data Today
+          <Heading as="h2" size="2xl" mb={4} fontWeight="bold" color="white">
+            Start Your Data Journey
           </Heading>
-          <Text fontSize="lg" mb={10} maxW="700px" mx="auto" color="white">
-            Pick your plan or talk to sales for a custom fit. Enjoy a 14-day trial, no card needed.
+          <Text fontSize="xl" mb={8} maxW="700px" mx="auto" color="white">
+            Choose a plan or contact sales for a custom solution. Try risk-free with a 14-day trial.
           </Text>
           <Flex justify="center" gap={6} flexWrap="wrap">
             <Button
               size="lg"
-              variant="outline"
-              borderColor="white"
-              color="white"
-              _hover={{ bg: "orange.700" }}
+              bg="white"
+              color="orange.600"
+              _hover={{ bg: "gray.100" }}
               as="a"
               href="https://buy.stripe.com/5kAaGP0lMdJ17Xa000"
+              fontWeight="bold"
             >
               Start Free Trial
             </Button>
@@ -473,6 +481,7 @@ function PricingPage() {
               _hover={{ bg: "orange.700" }}
               as="a"
               href="/contact"
+              fontWeight="bold"
             >
               Contact Sales
             </Button>
