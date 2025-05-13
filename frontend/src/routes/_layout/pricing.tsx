@@ -21,7 +21,7 @@ function PricingPage() {
       annualHref: "https://buy.stripe.com/8wMg194C2eN51yMeUZ",
       features: [
         "100,000 API calls per month",
-        "20 simultaneous threads",
+        "2 simultaneous threads",
         "Targeting in US & EU regions",
         "Dynamic page rendering",
         "High-quality residential & mobile proxies",
@@ -43,7 +43,7 @@ function PricingPage() {
       popular: true,
       features: [
         "1,000,000 API calls per month",
-        "50 simultaneous threads",
+        "15 simultaneous threads",
         "Targeting in US & EU regions",
         "Dynamic page rendering",
         "High-quality residential & mobile proxies",
@@ -64,7 +64,7 @@ function PricingPage() {
       annualHref: "https://buy.stripe.com/bIY16f0lM0Wf4KY28b",
       features: [
         "5,000,000 API calls per month",
-        "200 simultaneous threads",
+        "15 simultaneous threads",
         "Global country-specific targeting",
         "Dynamic page rendering",
         "High-quality residential & mobile proxies",
@@ -82,7 +82,7 @@ function PricingPage() {
       customPricing: true,
       features: [
         "5,000,000+ API calls per month",
-        "200+ simultaneous threads",
+        "Unlimited threads",
         "Global country-specific targeting",
         "Dynamic page rendering",
         "High-quality residential & mobile proxies",
