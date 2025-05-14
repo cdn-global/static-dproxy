@@ -108,9 +108,9 @@ function PricingPage() {
         },
         {
           name: "Simultaneous threads",
-          starter: "20",
-          analyst: "50",
-          business: "200",
+          starter: "2",
+          analyst: "15",
+          business: "15",
           enterprise: "200+",
         },
       ],
