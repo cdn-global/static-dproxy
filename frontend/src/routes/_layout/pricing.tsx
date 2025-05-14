@@ -237,7 +237,7 @@ function PricingPage() {
                     borderRadius="md"
                     fontSize="sm"
                   >
-                    Most Popular
+                    Popular
                   </Badge>
                 )}
                 <Box p={8}>
