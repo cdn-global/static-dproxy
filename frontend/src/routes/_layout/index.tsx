@@ -14,8 +14,8 @@ function LandingPage() {
     <Box>
       {/* Hero Section */}
       <HeroSection
-        title="Grow Your Startup with Data-Driven Solutions"
-        subtitle="Bypass bot defenses, generate leads, and acquire users affordably with our web scraping and proxy tools."
+        title="Scrape the Web with a Simple HTTPS API"
+        subtitle="Bypass Cloudflare, scrape JavaScript-heavy sites, and extract data reliably with our powerful proxy API."
         ctas={[
           { text: "Start Free Trial", link: "https://cloud.thedataproxy.com" },
           { text: "Request Demo", link: "/demo-request" },
@@ -23,34 +23,34 @@ function LandingPage() {
         bgImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa"
       />
 
-      {/* Pain Points Section */}
+      {/* Scraping Challenges Section */}
       <Box py={16} bg="white" maxW="1200px" mx="auto" px={4}>
         <Heading as="h2" size="xl" textAlign="center" mb={10} color="gray.800" fontWeight="medium">
-          Solve Your Growth Challenges
+          Tackle Your Web Scraping Pain Points
         </Heading>
         <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
           <VStack p={6} bg="gray.50" borderRadius="md" spacing={4} align="start">
             <Heading as="h3" size="md" color="gray.800" fontWeight="medium">
-              Beat Bot Defenses
+              Bypass Bot Defenses
             </Heading>
             <Text color="gray.600">
-              Overcome Cloudflare and anti-bot measures with our 10M+ IP pool and intelligent routing.
+              Overcome Cloudflare and anti-bot measures with our 10M+ IP pool, perfect for scraping sites like HLTV or Codeur.com.
             </Text>
           </VStack>
           <VStack p={6} bg="gray.50" borderRadius="md" spacing={4} align="start">
             <Heading as="h3" size="md" color="gray.800" fontWeight="medium">
-              Grow Without Ads
+              Scrape JavaScript Sites
             </Heading>
             <Text color="gray.600">
-              Use our lead generation and organic growth tools to acquire users on a tight budget.
+              Easily handle dynamic content on sites like Lowes with our API, no complex browser automation needed.
             </Text>
           </VStack>
           <VStack p={6} bg="gray.50" borderRadius="md" spacing={4} align="start">
             <Heading as="h3" size="md" color="gray.800" fontWeight="medium">
-              Maximize Conversions
+              Stay Compliant
             </Heading>
             <Text color="gray.600">
-              Optimize landing pages and nurture leads to turn clicks into loyal users.
+              Scrape ethically with GDPR, ISO 27001, and SOC 2 compliance built into our platform.
             </Text>
           </VStack>
         </Grid>
@@ -59,7 +59,7 @@ function LandingPage() {
       {/* Proxy Network Coverage */}
       <Box py={16} bg="orange.50" color="gray.800">
         <Heading as="h2" size="xl" textAlign="center" mb={10} fontWeight="medium">
-          Global Proxy Network for Seamless Scraping
+          Global Proxy Network for Reliable Scraping
         </Heading>
         <Flex justify="space-around" flexWrap="wrap" maxW="1200px" mx="auto" px={4}>
           <VStack textAlign="center" p={4} minW="150px" spacing={2}>
@@ -81,26 +81,51 @@ function LandingPage() {
         </Flex>
       </Box>
 
-      {/* Business Solutions */}
+      {/* API Features */}
       <Box py={16} bg="white" maxW="1200px" mx="auto" px={4}>
         <Heading as="h2" size="xl" textAlign="center" mb={10} color="gray.800" fontWeight="medium">
-          Solutions for Startups and Developers
+          Why Our HTTPS Scraping API Stands Out
         </Heading>
         <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
           <VStack p={6} bg="gray.50" borderRadius="md" spacing={4} align="start">
             <Heading as="h3" size="md" color="gray.800" fontWeight="medium">
-              Lead Generation
+              Simple Integration
             </Heading>
             <Text color="gray.600">
-              Extract contact data from directories and networks to fuel your sales pipeline.
+              Make HTTPS requests with our API to scrape data effortlessly, no complex setup required.
             </Text>
           </VStack>
+          <VStack p={6} bg="gray.50" borderRadius="md" spacing={4} align="start">
+            <Heading as="h3" size="md" color="gray.800" fontWeight="medium">
+              Anti-Ban Protection
+            </Heading>
+            <Text color="gray.600">
+              Intelligent routing and IP rotation minimize blocks, ensuring uninterrupted scraping.
+            </Text>
+          </VStack>
+          <VStack p={6} bg="gray.50" borderRadius="md" spacing={4} align="start">
+            <Heading as="h3" size="md" color="gray.800" fontWeight="medium">
+              Scalable Performance
+            </Heading>
+            <Text color="gray.600">
+              Handle millions of requests with unlimited capacity and fast response times.
+            </Text>
+          </VStack>
+        </Grid>
+      </Box>
+
+      {/* Business Solutions */}
+      <Box py={16} bg="orange.50" maxW="1200px" mx="auto" px={4}>
+        <Heading as="h2" size="xl" textAlign="center" mb={10} color="gray.800" fontWeight="medium">
+          Power Your Business with Scraped Data
+        </Heading>
+        <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
           <VStack p={6} bg="gray.50" borderRadius="md" spacing={4} align="start">
             <Heading as="h3" size="md" color="gray.800" fontWeight="medium">
               Market Research
             </Heading>
             <Text color="gray.600">
-              Gather competitor and market data to stay ahead with real-time insights.
+              Scrape trends and sentiment data from global sources to stay ahead of competitors.
             </Text>
           </VStack>
           <VStack p={6} bg="gray.50" borderRadius="md" spacing={4} align="start">
@@ -108,7 +133,15 @@ function LandingPage() {
               AI Training Data
             </Heading>
             <Text color="gray.600">
-              Collect diverse datasets for machine learning with ethical scraping practices.
+              Gather diverse datasets for machine learning with ethical, compliant scraping.
+            </Text>
+          </VStack>
+          <VStack p={6} bg="gray.50" borderRadius="md" spacing={4} align="start">
+            <Heading as="h3" size="md" color="gray.800" fontWeight="medium">
+              Lead Generation
+            </Heading>
+            <Text color="gray.600">
+              Extract contact data from directories and networks to fuel your sales pipeline.
             </Text>
           </VStack>
         </Grid>
@@ -145,10 +178,10 @@ function LandingPage() {
       <Box py={16} bg="orange.400" color="white">
         <Box maxW="1200px" mx="auto" px={4} textAlign="center">
           <Heading as="h2" size="xl" mb={6} fontWeight="medium">
-            Start Growing Today with a Free Trial
+            Start Scraping with Our HTTPS API Today
           </Heading>
           <Text fontSize="lg" mb={10} maxW="700px" mx="auto">
-            Unlock powerful web scraping and lead generation tools to scale your startup without the hefty ad spend.
+            Unlock reliable web scraping with a simple API call. Bypass blocks, scrape any site, and get the data you need.
           </Text>
           <Flex justify="center" gap={6} flexWrap="wrap">
             <Button
