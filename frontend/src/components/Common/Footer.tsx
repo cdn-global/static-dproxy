@@ -33,7 +33,7 @@ const Footer = () => {
           </Text>
          
             <Text color="gray.300" mb={4}>
-  <strong>Phone:</strong> <a href="tel:+19172757922‬">+1 (917) 275-7922‬</a>
+  <strong>Phone:</strong> <a href="tel:+18334353873‬">+1 (833) 435-3873‬</a>
 </Text>
 <Flex align="center" gap={4} mb={4}>
               <Link href="mailto:info@thedataproxy.com" color="gray.300" _hover={{ color: "orange.400" }}>
