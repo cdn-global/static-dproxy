@@ -19,12 +19,12 @@ const Footer = () => {
           <Box>
           <Heading as="h4" size="md" mb={1} color="white">
   <Link href="https://thedataproxy.com" _hover={{ textDecoration: "none", color: "orange.400" }}>
-    The Data Proxy
+    theDATAPROXY.com
   </Link>
 </Heading>
 <Text color="gray.400" fontSize="sm" mb={2}>
   <Link href="https://cobaltdata.net" _hover={{ textDecoration: "none", color: "blue.400" }}>
-    Cobalt Data Network
+    COBALTDATA.net
   </Link>
 </Text>
           <Text color="gray.300" mb={4}>
@@ -105,7 +105,7 @@ const Footer = () => {
               <Link href="https://cloud.thedataproxy.com/login" color="gray.300" _hover={{ color: "orange.400" }}>Log In</Link>
               <Link href="https://buy.stripe.com/5kAaGP0lMdJ17Xa000" color="gray.300" _hover={{ color: "orange.400" }}>Sign Up</Link>
               <Link href="/contact" color="gray.300" _hover={{ color: "orange.400" }}>Contact</Link>
-              <Link href="https://cobaltdata.net" color="gray.300" _hover={{ color: "blue.400" }}>Cobalt Data Network</Link>
+              <Link href="https://cobaltdata.net" color="gray.300" _hover={{ color: "blue.400" }}>COBALTDATA.net</Link>
             </VStack>
           </Box>
         </Grid>
@@ -166,7 +166,7 @@ const Footer = () => {
         {/* Bottom Footer - Copyright and Legal */}
         <Flex justify="space-between" align="center" borderTop="1px solid" borderColor="gray.700" pt={6} flexWrap="wrap" gap={4}>
           <Text color="gray.400" fontSize="sm">
-          © 2025 <Link href="https://thedataproxy.com" color="gray.200" _hover={{ color: "orange.400" }}>The Data Proxy</Link>, <Link href="https://cobaltdata.net" color="gray.200" _hover={{ color: "blue.400" }}>Cobalt Data Network</Link>. All rights reserved.
+          © 2025 <Link href="https://thedataproxy.com" color="gray.200" _hover={{ color: "orange.400" }}>theDATAPROXY.com</Link>, <Link href="https://cobaltdata.net" color="gray.200" _hover={{ color: "blue.400" }}>COBALTDATA.net</Link>. All rights reserved.
           </Text>
           <Flex gap={6}>
             <Link href="/privacy" color="gray.400" fontSize="sm" _hover={{ color: "orange.400" }}>Privacy Policy</Link>
