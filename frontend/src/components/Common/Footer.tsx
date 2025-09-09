@@ -52,7 +52,7 @@ const Footer = () => {
                 <Box as="span" color="gray.300" _hover={{ color: "orange.400" }}>GitHub</Box>
               </Link>
             </Flex>
-            <Text color="gray.300" mb={4} pt={4}><strong>Address:</strong> 99 Wall St Suite 5660, New York, NY 10005, USA</Text>
+            <Text color="gray.300" mb={4} pt={4}><strong>Address:</strong> 8 The Green, Dover, Kent County, DE 19901 US</Text>
           </Box>
 
           {/* Solutions */}
