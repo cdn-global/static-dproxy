@@ -21,16 +21,30 @@ const Logo: React.FC<LogoProps> = ({ href = '/', ...rest }) => {
           color="white"
           boxShadow="lg"
           p={{ base: 2, md: 2 }}
-
         >
           <Icon as={Layers} boxSize={{ base: '20px', md: '24px' }} aria-hidden />
         </Box>
 
         <Box lineHeight={1} color="gray.800" display={{ base: 'flex', md: 'flex' }} alignItems="center">
-          <Text as="span" fontWeight="600" fontSize={{ base: 'md', md: 'xl' }} display={{ base: 'inline', md: 'inline' }}>
+          <Text
+            as="span"
+            fontWeight="600"
+            fontSize={{ base: 'md', md: 'xl' }}
+            display={{ base: 'inline', md: 'inline' }}
+            bgGradient="linear(to-r, orange.500, orange.300)"
+            bgClip="text"
+          >
             DATA
           </Text>
-          <Text as="span" fontWeight="800" fontSize={{ base: 'md', md: 'xl' }} display={{ base: 'inline', md: 'inline' }} color="orange.400" letterSpacing="tighter">
+          <Text
+            as="span"
+            fontWeight="800"
+            fontSize={{ base: 'md', md: 'xl' }}
+            display={{ base: 'inline', md: 'inline' }}
+            bgGradient="linear(to-r, orange.300, orange.400)"
+            bgClip="text"
+            letterSpacing="tighter"
+          >
             PROXY
           </Text>
         </Box>
