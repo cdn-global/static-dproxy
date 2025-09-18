@@ -35,7 +35,7 @@ import {
   FiSettings
 } from "react-icons/fi";
 
-import Logo from "/assets/images/the-data-proxy-logo.png";
+import Logo from "./Logo";
 import type { UserPublic } from "../../client";
 import useAuth from "../../hooks/useAuth";
 
@@ -276,8 +276,8 @@ const TopNav = () => {
       >
         <Container maxW="1200px" px={0}>
           <Flex align="center" justify="space-between" w="100%">
-            <Link href="/" as={RouterLink} onClick={onClose}>
-              <Image src={Logo} alt="Web Scraping Proxy Network" h="40px" />
+            <Link as={RouterLink} to="/" onClick={onClose}>
+              <Logo />
             </Link>
 
             <IconButton
