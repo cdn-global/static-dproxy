@@ -1,7 +1,7 @@
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
-  initialColorMode: "light", // Changed to light mode as the default
+  initialColorMode: "light",
   useSystemColorMode: false,
 };
 
@@ -10,68 +10,131 @@ const theme = extendTheme({
   styles: {
     global: () => ({
       "html, body": {
-        fontFamily: '"Figtree", sans-serif',
-        lineHeight: "1.7",
-        bg: "gray.50", // Hardcoded light gray background for light mode
-        color: "gray.800", // Hardcoded dark text for readability in light mode
+        fontFamily: '"Poppins", sans-serif',
+        lineHeight: "1.5",
+        bg: "#FFF7ED", // Soft peach background
+        color: "gray.900",
+        transition: "all 0.3s ease-in-out",
       },
     }),
   },
   colors: {
     ui: {
-      main: "#0047AB", // Cobalt blue as the primary accent color
-      secondary: "#FFA500", // Orange for secondary elements (or "#FFFF00" for yellow if preferred)
-      success: "#38A169", // Green for success states
-      danger: "#E53E3E", // Red for errors (unchanged)
-      light: "#FFFFFF", // White for backgrounds
-      dark: "#1A202C", // Dark background for dark mode (unchanged)
-      darkSlate: "#2D3748", // Darker gray for contrast
-      dim: "#A0AEC0", // Muted gray for secondary text (unchanged)
+      main: "#FF6B00", // Bright, vibrant orange for buttons, header, footer
+      secondary: "#F97316", // Vibrant orange for hover
+      surface: "#FFE5D0",
+      codeBg: "#1F2937",
+      border: "#E6E6E6",
+      success: "#00CC88",
+      danger: "#FF2D2D",
+      light: "#FFFFFF", // Pure white for text/icon contrast
+      dark: "#0F172A",
+      darkSlate: "#1A202C",
+      dim: "#64748B",
     },
   },
+  fonts: {
+    heading: '"Poppins", sans-serif',
+    body: '"Poppins", sans-serif',
+    mono: '"JetBrains Mono", monospace',
+  },
   components: {
+    Header: {
+      baseStyle: {
+        bg: "ui.main !important", // Bright orange background
+        color: "ui.light !important", // White for text/icon visibility
+        fontWeight: "bold",
+        fontSize: "lg",
+        px: 6,
+        py: 4,
+        transition: "all 0.2s ease-in-out",
+        boxShadow: "0 2px 8px rgba(255, 107, 0, 0.3)", // Subtle orange shadow
+      },
+    },
+    Footer: {
+      baseStyle: {
+        bg: "ui.main !important", // Bright orange background
+        color: "ui.light !important", // White for text/icon visibility
+        fontWeight: "bold",
+        fontSize: "md",
+        px: 6,
+        py: 4,
+        transition: "all 0.2s ease-in-out",
+        boxShadow: "0 -2px 8px rgba(255, 107, 0, 0.3)", // Subtle orange shadow
+      },
+    },
+    Box: {
+      baseStyle: {
+        bg: "ui.light",
+        color: "ui.dark",
+      },
+    },
     Heading: {
       baseStyle: (props) => ({
-        color: props.colorMode === "dark" ? "gray.100" : "gray.900",
+        color: props.colorMode === "dark" ? "gray.50" : "gray.900",
+        fontWeight: "black",
+        letterSpacing: "-0.03em",
       }),
+      sizes: {
+        xl: { fontSize: "4xl", lineHeight: "1.2" },
+        lg: { fontSize: "3xl", lineHeight: "1.3" },
+      },
     },
     Text: {
       baseStyle: (props) => ({
-        color: props.colorMode === "dark" ? "gray.200" : "gray.700", // Darker text for light mode readability
+        color: props.colorMode === "dark" ? "gray.100" : "gray.800",
+        fontWeight: "medium",
+        letterSpacing: "-0.01em",
       }),
     },
     Code: {
       baseStyle: (props) => ({
-        bg: props.colorMode === "dark" ? "gray.700" : "gray.100", // Light background for light mode
-        color: props.colorMode === "dark" ? "gray.100" : "gray.800", // Dark text in light mode
+        bg: props.colorMode === "dark" ? "ui.dark" : "ui.light",
+        color: props.colorMode === "dark" ? "gray.50" : "ui.dark",
         fontSize: "sm",
-        p: 3,
-        borderRadius: "md",
+        p: 4,
+        borderRadius: "xl",
+        boxShadow: props.colorMode === "dark" ? "0 4px 10px rgba(0,0,0,0.3)" : "0 2px 8px rgba(0,0,0,0.1)",
+        border: "1px solid",
+        borderColor: props.colorMode === "dark" ? "ui.secondary" : "ui.main",
       }),
     },
     Button: {
       baseStyle: {
-        fontWeight: "bold",
-        borderRadius: "md",
+        fontWeight: "extrabold",
+        borderRadius: "0", // Square, rigid corners
+        px: 6,
+        py: 3,
+        transition: "all 0.2s ease-in-out",
+        _focus: { boxShadow: "0 0 0 3px rgba(255, 107, 0, 0.4)" },
+        background: "ui.main !important",
+        color: "ui.light !important",
       },
       variants: {
         primary: {
-          backgroundColor: "ui.main", // Teal accent
-          color: "ui.light", // White text
+          background: "ui.main !important",
+          color: "ui.light !important",
           _hover: {
-            backgroundColor: "#234E52", // Darker teal on hover
+            background: "ui.secondary !important",
+            transform: "translateY(-2px)",
+            boxShadow: "0 4px 12px rgba(249, 115, 22, 0.4)",
           },
+          _active: { transform: "translateY(0)" },
           _disabled: {
-            backgroundColor: "ui.main",
-            opacity: 0.6,
+            background: "ui.main !important",
+            opacity: 0.3,
+            color: "ui.light !important",
           },
         },
         danger: {
-          backgroundColor: "ui.danger", // Red (unchanged)
-          color: "ui.light", // White text
+          background: "ui.danger !important",
+          color: "ui.light !important",
           _hover: {
-            backgroundColor: "#E32727", // Darker red (unchanged)
+            background: "#E51A1A !important",
+            transform: "translateY(-2px)",
+            boxShadow: "0 4px 12px rgba(255, 45, 45, 0.3)",
           },
+          _active: { transform: "translateY(0)" },
         },
       },
       defaultProps: {
@@ -83,15 +146,26 @@ const theme = extendTheme({
         subtle: {
           tab: {
             color: "ui.dim",
+            fontWeight: "bold",
+            fontSize: "lg",
+            py: 3,
             _selected: {
-              color: "ui.main", // Teal for selected tab
-              fontWeight: "bold",
-              borderBottomColor: "ui.main", // Teal underline
-              borderBottomWidth: "2px",
+              color: "ui.main",
+              fontWeight: "black",
+              borderBottomColor: "ui.main",
+              borderBottomWidth: "4px",
+              bg: "ui.light",
+              boxShadow: "0 2px 8px rgba(255, 107, 0, 0.2)",
             },
             _hover: {
-              color: "ui.secondary", // Light teal on hover
+              color: "ui.secondary",
+              bg: "ui.surface",
+              borderRadius: "md",
             },
+          },
+          tablist: {
+            borderBottom: "2px solid",
+            borderColor: "ui.surface",
           },
         },
       },
@@ -99,49 +173,48 @@ const theme = extendTheme({
     Toast: {
       baseStyle: {
         container: {
-          bg: "white", // Bright white background (unchanged)
-          color: "gray.100", // Dark text (unchanged)
-          borderRadius: "md",
-          boxShadow: "lg",
-          padding: "16px",
+          bg: "ui.light",
+          color: "ui.dark",
+          borderRadius: "xl",
+          boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
+          padding: "20px",
           position: "absolute",
-          top: "20px",
-          transform: "translateX(-50%)", // Adjust for centering
-          minWidth: "300px",
-          maxWidth: "90%",
+          top: "30px",
+          transform: "translateX(-50%)",
+          minWidth: "340px",
+          maxWidth: "95%",
+          fontWeight: "semibold",
+          border: "1px solid",
+          borderColor: "ui.main",
         },
       },
       variants: {
         error: {
           container: {
-            bg: "red.100", // Light red for error
+            bg: "red.50",
             color: "red.900",
-            border: "1px solid",
-            borderColor: "red.300",
+            borderColor: "ui.danger",
           },
         },
         success: {
           container: {
-            bg: "green.100", // Light green for success
+            bg: "green.50",
             color: "green.900",
-            border: "1px solid",
-            borderColor: "green.300",
+            borderColor: "ui.success",
           },
         },
         info: {
           container: {
-            bg: "orange.100", // Light blue for info
-            color: "orange.900",
-            border: "1px solid",
-            borderColor: "orange.300",
+            bg: "ui.surface",
+            color: "ui.dark",
+            borderColor: "ui.main",
           },
         },
         warning: {
           container: {
-            bg: "yellow.100", // Light yellow for warning
+            bg: "yellow.50",
             color: "yellow.900",
-            border: "1px solid",
-            borderColor: "yellow.300",
+            borderColor: "yellow.400",
           },
         },
       },
