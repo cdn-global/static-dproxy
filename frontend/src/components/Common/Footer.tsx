@@ -22,11 +22,6 @@ const Footer = () => {
     theDATAPROXY.com
   </Link>
 </Heading>
-<Text color="gray.400" fontSize="sm" mb={2}>
-  <Link href="https://cobaltdata.net" _hover={{ textDecoration: "none", color: "blue.400" }}>
-    COBALTDATA.net
-  </Link>
-</Text>
           <Text color="gray.300" mb={4}>
             Enterprise grade proxy infrastructure designed specifically for web scraping, data collection, 
             and market intelligence needs with unlimited scale and global coverage across 190+ countries.
@@ -102,7 +97,6 @@ const Footer = () => {
               <Link href="https://cloud.thedataproxy.com/login" color="gray.300" _hover={{ color: "orange.400" }}>Log In</Link>
               <Link href="https://buy.stripe.com/5kAaGP0lMdJ17Xa000" color="gray.300" _hover={{ color: "orange.400" }}>Sign Up</Link>
               <Link href="/contact" color="gray.300" _hover={{ color: "orange.400" }}>Contact</Link>
-              <Link href="https://cobaltdata.net" color="gray.300" _hover={{ color: "blue.400" }}>COBALTDATA.net</Link>
             </VStack>
           </Box>
         </Grid>
